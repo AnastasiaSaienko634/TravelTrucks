@@ -1,23 +1,25 @@
 import Link from "next/link";
 import React from "react";
-import { FiHome } from "react-icons/fi";
 import css from "./Header.module.css";
-import AuthNavigation from "../AuthNavigation/AuthNavigation";
 
 const Header = () => {
   return (
     <header className={css.header}>
       <Link href="/" aria-label="Home" className={css.logo}>
-        NoteHub
+        Travel<span className={css.logoPart}>Trucks</span>
       </Link>
-      <nav aria-label="Main Navigation">
-        <ul className={css.navigation}>
+      <nav aria-label="Main Navigation" className={css.navigation}>
+        <ul className={css.navigationList}>
           <li>
             <Link href="/" className={css.navLink}>
-              <FiHome className={css.icon} /> Home
+              Home
             </Link>
           </li>
-          <AuthNavigation />
+          <li>
+            <Link href="/catalog" className={css.navLink}>
+              Catalog
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>
