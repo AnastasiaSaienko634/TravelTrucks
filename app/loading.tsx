@@ -4,7 +4,7 @@ import type { CSSProperties } from "react";
 
 const override: CSSProperties = {
   display: "block",
-  margin: "0 auto",
+  margin: "90px auto",
   borderColor: "red",
 };
 

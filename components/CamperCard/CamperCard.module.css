@@ -85,7 +85,8 @@
 }
 
 /* Button */
-.button {
+.link {
+  text-decoration: none;
   align-self: flex-start;
   padding: 12px 24px;
   background-color: #e44848;
@@ -97,6 +98,20 @@
   transition: background-color 0.2s ease;
 }
 
-.button:hover {
+.link:hover {
   background-color: #d63d3d;
+}
+
+.link:focus {
+  background-color: #d63d3d;
+}
+
+.link:active {
+  background-color: #d63d3d;
+}
+
+.iconStar {
+  color: #ffc531;
+  width: 16px;
+  height: 16px;
 }

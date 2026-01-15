@@ -1,0 +1,7 @@
+.notFoundContainer {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  padding-left: 64px;
+  padding-right: 64px;
+}

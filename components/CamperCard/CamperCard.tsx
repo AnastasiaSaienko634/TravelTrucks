@@ -1,5 +1,7 @@
 import { Camper } from "@/types/campers";
 import css from "./CamperCard.module.css";
+import Link from "next/link";
+import { RiStarSFill } from "react-icons/ri";
 
 interface CamperCardProp {
   camper: Camper;
@@ -25,7 +27,9 @@ const CamperCard = ({ camper }: CamperCardProp) => {
 
         {/* Rating & location */}
         <div className={css.meta}>
-          <span className={css.rating}>⭐ {camper.rating.toFixed(1)}</span>
+          <span className={css.rating}>
+            <RiStarSFill className={css.iconStar} /> {camper.rating.toFixed(1)}
+          </span>
           <span className={css.location}>📍 {camper.location}</span>
         </div>
 
@@ -42,7 +46,9 @@ const CamperCard = ({ camper }: CamperCardProp) => {
         </ul>
 
         {/* Button */}
-        <button className={css.button}>Show more</button>
+        <Link href={`/catalog/${camper.id}`} className={css.link}>
+          Show more
+        </Link>
       </div>
     </div>
   );
