@@ -75,3 +75,9 @@
 }
 
 /* Camper Description */
+
+.camperDescription {
+  margin: 28px 0 60px 0;
+  color: #555;
+  line-height: 1.4;
+}
