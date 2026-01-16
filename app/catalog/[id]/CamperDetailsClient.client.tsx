@@ -6,8 +6,15 @@ import { RiStarSFill } from "react-icons/ri";
 import { CiMap } from "react-icons/ci";
 import css from "./CamperDetails.module.css";
 import { lightningCssTransform } from "next/dist/build/swc/generated-native";
+import { useState } from "react";
+import BookingForm from "@/components/BookingForm/BookingForm";
+import Features from "@/components/Features/Features";
+import Reviews from "@/components/Reviews/Reviews";
 
 const CamperDetailsClient = () => {
+  const [activeTab, setActiveTab] = useState<"features" | "reviews">(
+    "features"
+  );
   const { id } = useParams<{ id: string }>();
 
   const {
@@ -54,6 +61,34 @@ const CamperDetailsClient = () => {
         ))}
       </ul>
       <p className={css.camperDescription}>{camper.description}</p>
+
+      {/* Tab Features and Reviews */}
+      <div className={css.buttons}>
+        <button
+          onClick={() => setActiveTab("features")}
+          className={css.btnFeatures}
+        >
+          Features
+        </button>
+        <button
+          onClick={() => setActiveTab("reviews")}
+          className={css.btnReviews}
+        >
+          Reviews
+        </button>
+      </div>
+
+      <div className={css.leftPart}>
+        <div>
+          {activeTab === "features" && <Features />}{" "}
+          {activeTab === "reviews" && <Reviews />}
+        </div>
+
+        {/* Booking Form */}
+        <div className={css.bookingForm}>
+          <BookingForm />
+        </div>
+      </div>
     </div>
   );
 };
