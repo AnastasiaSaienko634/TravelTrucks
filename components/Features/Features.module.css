@@ -1,0 +1,27 @@
+.container {
+  width: 631px;
+  display: flex;
+}
+
+/* Features */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 0 0 24px;
+  list-style: none;
+  width: 527px;
+}
+
+.features li {
+  padding: 10px 12px;
+  background-color: #f2f4f7;
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #101828;
+}

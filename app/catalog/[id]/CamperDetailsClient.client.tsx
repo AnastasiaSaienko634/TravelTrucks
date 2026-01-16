@@ -66,22 +66,22 @@ const CamperDetailsClient = () => {
       <div className={css.buttons}>
         <button
           onClick={() => setActiveTab("features")}
-          className={css.btnFeatures}
+          className={`${css.tab} ${activeTab === "features" ? css.active : ""}`}
         >
           Features
         </button>
         <button
           onClick={() => setActiveTab("reviews")}
-          className={css.btnReviews}
+          className={`${css.tab} ${activeTab === "reviews" ? css.active : ""}`}
         >
           Reviews
         </button>
       </div>
 
-      <div className={css.leftPart}>
-        <div>
-          {activeTab === "features" && <Features />}{" "}
-          {activeTab === "reviews" && <Reviews />}
+      <div className={css.tabs}>
+        <div className={css.leftPart}>
+          {activeTab === "features" && <Features camper={camper} />}{" "}
+          {activeTab === "reviews" && <Reviews camper={camper} />}
         </div>
 
         {/* Booking Form */}
