@@ -5,6 +5,7 @@ import { Camper } from "@/types/campers";
 
 const CamperList = async () => {
   const campers = await fetchCampers();
+  console.log(campers);
   return (
     <main>
       <ul className={css.camperList}>

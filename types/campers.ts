@@ -6,6 +6,13 @@ export interface Camper {
   location: string;
   description: string;
 
+  consumption: string;
+  height: string;
+  length: string;
+  width: string;
+  tank: string;
+  form: string;
+
   transmission: string;
   engine: string;
   AC: boolean;

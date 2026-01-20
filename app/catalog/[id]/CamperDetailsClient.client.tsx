@@ -13,7 +13,7 @@ import Reviews from "@/components/Reviews/Reviews";
 
 const CamperDetailsClient = () => {
   const [activeTab, setActiveTab] = useState<"features" | "reviews">(
-    "features"
+    "features",
   );
   const { id } = useParams<{ id: string }>();
 
@@ -78,6 +78,7 @@ const CamperDetailsClient = () => {
         </button>
       </div>
 
+      {/* Tab with Features and Reviews */}
       <div className={css.tabs}>
         <div className={css.leftPart}>
           {activeTab === "features" && <Features camper={camper} />}{" "}
