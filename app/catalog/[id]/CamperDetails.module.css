@@ -123,6 +123,8 @@
 
 /* Tabs */
 .tabs {
+  display: flex;
+  gap: 40px;
   padding-top: 24px;
   border-top: 2px solid #e5e7eb;
 }
