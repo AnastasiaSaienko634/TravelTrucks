@@ -10,6 +10,7 @@ import { useState } from "react";
 import BookingForm from "@/components/BookingForm/BookingForm";
 import Features from "@/components/Features/Features";
 import Reviews from "@/components/Reviews/Reviews";
+import { Toaster } from "react-hot-toast";
 
 const CamperDetailsClient = () => {
   const [activeTab, setActiveTab] = useState<"features" | "reviews">(
@@ -90,6 +91,7 @@ const CamperDetailsClient = () => {
           <BookingForm />
         </div>
       </div>
+      <Toaster />
     </div>
   );
 };

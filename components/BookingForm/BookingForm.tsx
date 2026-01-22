@@ -1,8 +1,10 @@
 import { Formik, Form, Field } from "formik";
 import css from "./BookingForm.module.css";
-
+import toast from "react-hot-toast";
 const BookingForm = () => {
-  const handleSubmit = () => {};
+  const handleSubmit = () => {
+    toast.success("Your booking was successful!");
+  };
   return (
     <div className={css.container}>
       <h3 className={css.bookingTitle}>Book your campervan now</h3>
@@ -22,19 +24,19 @@ const BookingForm = () => {
           <Field className={css.bookingField} name="name" placeholder="Name*" />
           <Field
             className={css.bookingField}
-            name="name"
+            name="email"
             placeholder="Email*"
             required
           />
           <Field
             className={css.bookingField}
-            name="name"
+            name="bookingDate"
             placeholder="Booking date*"
             required
           />
           <Field
             className={css.bookingTextarea}
-            name="name"
+            name="comment"
             placeholder="Comment"
             as="textarea"
             rows="4"
