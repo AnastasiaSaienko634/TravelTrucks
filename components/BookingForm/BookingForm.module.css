@@ -1,22 +1,26 @@
 /* Booking container */
 .container {
   display: flex;
+  align-items: center;
   flex-direction: column;
-  max-width: 640px;
+  max-width: 523px;
+  width: 100%;
   border: 2px solid #dadde1;
   border-radius: 10px;
 
   margin: 0 auto;
-  margin-left: 70px;
   padding-top: 44px;
   padding-bottom: 44px;
-  padding-left: 52px;
-  padding-right: 52px;
+  padding-left: 57px;
+  padding-right: 57px;
 }
 /* Booking Titel | Booking Description */
 
 .bookingTitle {
+  display: flex;
+
   margin: 0px;
+  margin-right: auto;
   margin-bottom: 8px;
   font-weight: 600;
   font-size: 20px;
@@ -25,6 +29,7 @@
 
 .bookingDescription {
   margin: 0px;
+  margin-right: auto;
   color: #6c717b;
   font-weight: 400;
   font-size: 16px;
@@ -37,14 +42,13 @@
   gap: 14px;
 
   padding-top: 24px;
-  padding-bottom: 24px;
 }
 
 .bookingField {
   border-radius: 12px;
   width: 510px;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   padding-left: 16px;
 
   font-weight: 400;
@@ -58,7 +62,7 @@
 .bookingTextarea {
   border-radius: 12px;
   width: 510px;
-  padding-top: 18px;
+  padding-top: 19px;
   padding-bottom: 18px;
   padding-left: 16px;
 
@@ -84,4 +88,20 @@
   margin-top: 24px;
   border-radius: 200px;
   width: 166px;
+
+  transition: background-color 0.25s ease;
+}
+
+.bookingButton:hover {
+  background-color: #d84343;
+  cursor: pointer;
+}
+
+.bookingButton:active {
+  background-color: #d84343;
+  cursor: pointer;
+}
+
+.bookingButton:focus {
+  background-color: #d84343;
 }

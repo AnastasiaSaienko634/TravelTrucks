@@ -8,9 +8,7 @@
   padding-left: 52px;
   padding-right: 52px;
   border-radius: 10px;
-  margin-bottom: 80px;
   max-width: 631px;
-  width: 100%;
 }
 
 /* Features */
@@ -21,7 +19,7 @@
   padding: 0;
   margin: 0 0 24px;
   padding-top: 44px;
-  padding-bottom: 20px;
+  padding-bottom: 100px;
   list-style: none;
 }
 
@@ -59,6 +57,7 @@
 
 .details {
   display: flex;
+  gap: 16px;
   flex-direction: column;
   margin: 0px;
   padding: 0px;
@@ -71,8 +70,13 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
+}
 
+.itemDetailsText {
+  margin: 0px;
+  padding: 0px;
   font-weight: 500;
-  font-size: 15px;
+
+  font-size: 16px;
   text-align: center;
 }

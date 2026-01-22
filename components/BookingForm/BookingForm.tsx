@@ -24,11 +24,13 @@ const BookingForm = () => {
             className={css.bookingField}
             name="name"
             placeholder="Email*"
+            required
           />
           <Field
             className={css.bookingField}
             name="name"
             placeholder="Booking date*"
+            required
           />
           <Field
             className={css.bookingTextarea}

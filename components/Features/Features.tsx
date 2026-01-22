@@ -69,8 +69,8 @@ const Features = ({ camper }: Props) => {
       <ul className={css.details}>
         {details.map((detail) => (
           <li className={css.itemDetails} key={detail.label}>
-            <p>{detail.label}</p>
-            <p>{detail.value}</p>
+            <p className={css.itemDetailsText}>{detail.label}</p>
+            <p className={css.itemDetailsText}>{detail.value}</p>
           </li>
         ))}
       </ul>
