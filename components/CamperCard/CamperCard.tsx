@@ -1,8 +1,14 @@
 import { Camper } from "@/types/campers";
 import css from "./CamperCard.module.css";
 import Link from "next/link";
+// Icons
 import { RiStarSFill } from "react-icons/ri";
-
+import { TbAutomaticGearbox } from "react-icons/tb";
+import { FaGasPump } from "react-icons/fa";
+import { GrCafeteria } from "react-icons/gr";
+import { FaBath } from "react-icons/fa";
+import { MdAir } from "react-icons/md";
+import { CiMap } from "react-icons/ci";
 interface CamperCardProp {
   camper: Camper;
 }
@@ -11,11 +17,13 @@ const CamperCard = ({ camper }: CamperCardProp) => {
   return (
     <div className={css.card}>
       {/* Image */}
-      <img
-        src={camper.gallery[0]?.original}
-        alt={camper.name}
-        className={css.image}
-      />
+      <div className={css.imageContainer}>
+        <img
+          src={camper.gallery[0]?.original}
+          alt={camper.name}
+          className={css.image}
+        />
+      </div>
 
       {/* Content */}
       <div className={css.content}>
@@ -30,7 +38,10 @@ const CamperCard = ({ camper }: CamperCardProp) => {
           <span className={css.rating}>
             <RiStarSFill className={css.iconStar} /> {camper.rating.toFixed(1)}
           </span>
-          <span className={css.location}>📍 {camper.location}</span>
+          <span className={css.location}>
+            {" "}
+            <CiMap className={css.mapIcon} /> {camper.location}
+          </span>
         </div>
 
         {/* Description */}
@@ -38,11 +49,29 @@ const CamperCard = ({ camper }: CamperCardProp) => {
 
         {/* Features */}
         <ul className={css.features}>
-          <li>{camper.transmission}</li>
-          <li>{camper.engine}</li>
-          {camper.kitchen && <li>🍳 Kitchen</li>}
-          {camper.AC && <li>❄️ AC</li>}
-          {camper.bathroom && <li>🚿 Bathroom</li>}
+          <li className={css.itemFeatures}>
+            <TbAutomaticGearbox className={css.iconFeatures} />
+            {camper.transmission}
+          </li>
+          <li className={css.itemFeatures}>
+            <FaGasPump className={css.iconFeatures} />
+            {camper.engine}
+          </li>
+          {camper.kitchen && (
+            <li className={css.itemFeatures}>
+              <GrCafeteria className={css.iconFeatures} /> Kitchen
+            </li>
+          )}
+          {camper.AC && (
+            <li className={css.itemFeatures}>
+              <MdAir className={css.iconFeatures} /> AC
+            </li>
+          )}
+          {camper.bathroom && (
+            <li className={css.itemFeatures}>
+              <FaBath className={css.iconFeatures} /> Bathroom
+            </li>
+          )}
         </ul>
 
         {/* Button */}

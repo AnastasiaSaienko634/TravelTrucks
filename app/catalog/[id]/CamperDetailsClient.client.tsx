@@ -1,16 +1,17 @@
 "use client";
-import { fetchCamperById } from "@/lib/api/serverApi";
+import css from "./CamperDetails.module.css";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "next/navigation";
-import { RiStarSFill } from "react-icons/ri";
-import { CiMap } from "react-icons/ci";
-import css from "./CamperDetails.module.css";
-import { lightningCssTransform } from "next/dist/build/swc/generated-native";
+import { Toaster } from "react-hot-toast";
 import { useState } from "react";
+import { fetchCamperById } from "@/lib/api/serverApi";
+// Components
 import BookingForm from "@/components/BookingForm/BookingForm";
 import Features from "@/components/Features/Features";
 import Reviews from "@/components/Reviews/Reviews";
-import { Toaster } from "react-hot-toast";
+// Icons
+import { RiStarSFill } from "react-icons/ri";
+import { CiMap } from "react-icons/ci";
 
 const CamperDetailsClient = () => {
   const [activeTab, setActiveTab] = useState<"features" | "reviews">(
