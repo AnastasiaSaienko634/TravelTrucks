@@ -9,3 +9,17 @@ ol {
   text-decoration: none;
   list-style-type: none;
 }
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+p,
+h1,
+h2,
+h3,
+h4 {
+  padding: 0px;
+  margin: 0px;
+}
