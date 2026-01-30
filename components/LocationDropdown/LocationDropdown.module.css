@@ -35,9 +35,49 @@
   outline: none;
 }
 
+.btnLocation:hover {
+  cursor: pointer;
+}
+
 .iconLocation {
   width: 20px;
   height: 20px;
   color: #101828;
   padding-left: 20px;
+}
+
+.locationListItems {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 320px;
+
+  background-color: #f7f7f7;
+  border: 1px solid #ededed;
+  border-radius: 14px;
+
+  padding: 6px 0;
+}
+
+.locationItem {
+  padding: 12px 20px 12px 40px;
+
+  font-size: 15px;
+  font-weight: 500;
+  color: #222;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* hover-эффект */
+.locationItem:hover {
+  background-color: #ffffff;
+  color: #000;
+}
+
+/* разделитель между пунктами */
+.locationItem:not(:last-child) {
+  border-bottom: 1px solid #eaeaea;
 }

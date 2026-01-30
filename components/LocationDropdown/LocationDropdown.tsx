@@ -28,9 +28,13 @@ const LocationDropdown = () => {
       </button>
 
       {open && (
-        <ul>
+        <ul className={css.locationListItems}>
           {locationList.map((location) => (
-            <li key={location.slug} onClick={() => handleSelect(location.slug)}>
+            <li
+              className={css.locationItem}
+              key={location.slug}
+              onClick={() => handleSelect(location.slug)}
+            >
               {location.label}
             </li>
           ))}
