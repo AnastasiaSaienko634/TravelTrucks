@@ -1,10 +1,13 @@
-import { fetchCampers } from "@/lib/api/serverApi";
+"use client";
 import CamperCard from "../CamperCard/CamperCard";
 import css from "./CamperList.module.css";
 import { Camper } from "@/types/campers";
 
-const CamperList = async () => {
-  const campers = await fetchCampers();
+interface Props {
+  campers: Camper[];
+}
+
+const CamperList = ({ campers }: Props) => {
   console.log(campers);
   return (
     <main>
@@ -15,7 +18,6 @@ const CamperList = async () => {
           </li>
         ))}
       </ul>
-      ;
     </main>
   );
 };

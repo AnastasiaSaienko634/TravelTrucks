@@ -25,6 +25,7 @@
   letter-spacing: 0%;
   text-align: left;
 
+  text-transform: capitalize;
   padding-bottom: 10px;
   padding-top: 10px;
   color: #101828;

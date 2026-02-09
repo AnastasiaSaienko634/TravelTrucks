@@ -17,3 +17,11 @@ export const fetchCamperById = async (id: string) => {
   const response = await nextServer.get<Camper>(`/campers/${id}`);
   return response.data;
 };
+
+//Fetch by Categorie(location)
+export const fetchCampersbyCategorie = async (query: string) => {
+  const response = await nextServer.get("/campers", {
+    params: { location: query },
+  });
+  return response.data.items;
+};

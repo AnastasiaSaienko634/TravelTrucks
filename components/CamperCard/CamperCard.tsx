@@ -75,7 +75,7 @@ const CamperCard = ({ camper }: CamperCardProp) => {
         </ul>
 
         {/* Button */}
-        <Link href={`/catalog/${camper.id}`} className={css.link}>
+        <Link href={`/catalog/filter/${camper.id}`} className={css.link}>
           Show more
         </Link>
       </div>
