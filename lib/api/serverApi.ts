@@ -6,10 +6,23 @@ interface FetchCampersResponse {
   items: Camper[];
 }
 
+interface FetchParamsCampers {
+  pageParam: number;
+  limit: number;
+}
+
 //Fetch all Campers
-export const fetchCampers = async (): Promise<Camper[]> => {
-  const response = await nextServer.get<FetchCampersResponse>("/campers");
-  return response.data.items;
+export const fetchCampers = async ({
+  pageParam = 1,
+  limit = 4,
+}: FetchParamsCampers) => {
+  const response = await nextServer.get<FetchCampersResponse>("/campers", {
+    params: {
+      page: pageParam,
+      limit,
+    },
+  });
+  return response.data;
 };
 
 //Fetch Camper by Id
