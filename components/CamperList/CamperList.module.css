@@ -8,3 +8,33 @@
   padding: 0px;
   padding-top: 48px;
 }
+
+/* Load More Button */
+
+.loadMoreBtn {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 16px 32px 16px 32px;
+  border-radius: 200px;
+  background-color: white;
+  border: 2px solid #dadde1;
+  outline: none;
+
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  transition: border-color 0.3s ease;
+}
+
+.loadMoreBtn:hover {
+  border-color: #d84343;
+  cursor: pointer;
+}
+
+.loadMoreBtn:focus {
+  border-color: #d84343;
+  cursor: pointer;
+}
