@@ -1,10 +1,43 @@
+"use client";
+import { useFilterStore } from "@/lib/store/campersStore";
 import React from "react";
+import css from "./Filters.module.css";
+
+const equipmentOptions = [
+  { id: "AC", label: "AC" },
+  { id: "automatic", label: "Automatic" },
+  { id: "kitchen", label: "Kitchen" },
+  { id: "TV", label: "TV" },
+  { id: "bathroom", label: "Bathroom" },
+];
 
 const Filters = () => {
+  const {
+    equipment,
+    vehicleType,
+    toggleEquipment,
+    setVehicleType,
+    resetFilters,
+  } = useFilterStore();
   return (
     <>
-      <h3>Filters</h3>
-      <h2>Vehicle equipment</h2>
+      <h3 className={css.filtersTitle}>Filters</h3>
+      <h2 className={css.vichleEquipment}>Vehicle equipment</h2>
+      <div className={css.equipmentList}>
+        {equipmentOptions.map(({ id, label }) => {
+          const active = equipment.includes(id);
+
+          return (
+            <button
+              key={id}
+              onClick={() => toggleEquipment(id)}
+              className={`${css.btnSelect} ${active ? css.btnActive : ""}`}
+            >
+              {label}
+            </button>
+          );
+        })}
+      </div>
     </>
   );
 };

@@ -1,0 +1,61 @@
+/* Filter title */
+
+.filtersTitle {
+  color: #475467;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+
+  margin-left: 64px;
+  padding-top: 40px;
+}
+
+/* Vehicle Equipment Title */
+
+.vichleEquipment {
+  color: #101828;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0%;
+
+  margin-left: 64px;
+  padding-top: 32px;
+
+  padding-bottom: 24px;
+}
+
+/* Vicihicle Equipment List */
+
+.equipmentList {
+  max-width: 200px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  margin-left: 64px;
+}
+
+/* Vehicle Equipment Item */
+
+.btnSelect {
+  width: 112px;
+  background-color: white;
+  border: 1px solid #dadde1;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.5%;
+  text-align: center;
+  color: #101828;
+
+  border-radius: 12px;
+  border-width: 1px;
+  padding-top: 16px;
+  padding-right: 12px;
+  padding-bottom: 16px;
+  padding-left: 12px;
+}

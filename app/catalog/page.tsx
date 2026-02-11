@@ -5,6 +5,7 @@ import css from "./CatalogPage.module.css";
 import { useFilterStore } from "@/lib/store/campersStore";
 import { useEffect, useState } from "react";
 import { fetchCampersbyCategorie } from "@/lib/api/serverApi";
+import Filters from "@/components/Filters/Filters";
 
 const CatalogPage = () => {
   const city = useFilterStore((state) => state.city);
@@ -22,7 +23,10 @@ const CatalogPage = () => {
   }, [city]);
   return (
     <div className={css.catalogContainer}>
-      <LocationDropdown />
+      <div>
+        <LocationDropdown />
+        <Filters />
+      </div>
       <CamperList campers={campers} />
     </div>
   );
