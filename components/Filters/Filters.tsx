@@ -29,6 +29,12 @@ const equipmentOptions = [
   },
 ];
 
+const vehicleOptions = [
+  { type: "fullyIntegrated", label: "Fully Integrated" },
+  { type: "panelTruck", label: "Van" },
+  { type: "alcove", label: "Alcove" },
+];
+
 const Filters = () => {
   const {
     equipment,
@@ -59,6 +65,11 @@ const Filters = () => {
       </div>
 
       <h2 className={css.vehicleTypeTitle}>Vehicle type</h2>
+      <div className={css.equipmentList}>
+        {vehicleOptions.map(({ type, label }) => {
+          return <button key={type}>{label}</button>;
+        })}
+      </div>
     </>
   );
 };
