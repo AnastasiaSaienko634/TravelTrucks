@@ -26,10 +26,25 @@
   padding-bottom: 24px;
 }
 
+/* Vehicle Type Title */
+
+.vehicleTypeTitle {
+  color: #101828;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0%;
+
+  margin-left: 64px;
+  padding-top: 32px;
+
+  padding-bottom: 24px;
+}
+
 /* Vicihicle Equipment List */
 
 .equipmentList {
-  max-width: 200px;
+  max-width: 250px;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -41,6 +56,9 @@
 /* Vehicle Equipment Item */
 
 .btnSelect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 112px;
   background-color: white;
   border: 1px solid #dadde1;
@@ -58,4 +76,26 @@
   padding-right: 12px;
   padding-bottom: 16px;
   padding-left: 12px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.btnSelect:hover {
+  border-color: #e44848;
+  scale: 1.01;
+}
+
+.btnSelect:focus {
+  border-color: #e44848;
+}
+
+.btnActive {
+  border-color: #e44848;
+}
+
+/* Icon */
+.iconFilter {
+  padding-bottom: 8px;
+  width: 30px;
+  height: 30px;
 }

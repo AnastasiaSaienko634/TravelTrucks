@@ -7,15 +7,26 @@ import { TbAutomaticGearbox } from "react-icons/tb";
 import { FaGasPump } from "react-icons/fa";
 import { GrCafeteria } from "react-icons/gr";
 import { FaBath } from "react-icons/fa";
-import { RiListRadio } from "react-icons/ri";
 import { MdAir } from "react-icons/md";
 
 const equipmentOptions = [
-  { id: "AC", label: "AC" },
-  { id: "automatic", label: "Automatic" },
-  { id: "kitchen", label: "Kitchen" },
-  { id: "TV", label: "TV" },
-  { id: "bathroom", label: "Bathroom" },
+  { id: "AC", label: "AC", icon: <MdAir className={css.iconFilter} /> },
+  {
+    id: "automatic",
+    label: "Automatic",
+    icon: <TbAutomaticGearbox className={css.iconFilter} />,
+  },
+  {
+    id: "kitchen",
+    label: "Kitchen",
+    icon: <GrCafeteria className={css.iconFilter} />,
+  },
+  { id: "TV", label: "TV", icon: <FaGasPump className={css.iconFilter} /> },
+  {
+    id: "bathroom",
+    label: "Bathroom",
+    icon: <FaBath className={css.iconFilter} />,
+  },
 ];
 
 const Filters = () => {
@@ -31,7 +42,7 @@ const Filters = () => {
       <h3 className={css.filtersTitle}>Filters</h3>
       <h2 className={css.vichleEquipment}>Vehicle equipment</h2>
       <div className={css.equipmentList}>
-        {equipmentOptions.map(({ id, label }) => {
+        {equipmentOptions.map(({ id, label, icon }) => {
           const active = equipment.includes(id);
 
           return (
@@ -40,11 +51,14 @@ const Filters = () => {
               onClick={() => toggleEquipment(id)}
               className={`${css.btnSelect} ${active ? css.btnActive : ""}`}
             >
+              {icon}
               {label}
             </button>
           );
         })}
       </div>
+
+      <h2 className={css.vehicleTypeTitle}>Vehicle type</h2>
     </>
   );
 };
