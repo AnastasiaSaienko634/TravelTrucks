@@ -2,6 +2,13 @@
 import { useFilterStore } from "@/lib/store/campersStore";
 import React from "react";
 import css from "./Filters.module.css";
+// Icons
+import { TbAutomaticGearbox } from "react-icons/tb";
+import { FaGasPump } from "react-icons/fa";
+import { GrCafeteria } from "react-icons/gr";
+import { FaBath } from "react-icons/fa";
+import { RiListRadio } from "react-icons/ri";
+import { MdAir } from "react-icons/md";
 
 const equipmentOptions = [
   { id: "AC", label: "AC" },
