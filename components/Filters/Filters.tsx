@@ -8,7 +8,9 @@ import { FaGasPump } from "react-icons/fa";
 import { GrCafeteria } from "react-icons/gr";
 import { FaBath } from "react-icons/fa";
 import { MdAir } from "react-icons/md";
-
+import { MdOutlineViewComfy } from "react-icons/md";
+import { FiGrid } from "react-icons/fi";
+import { FiColumns } from "react-icons/fi";
 const equipmentOptions = [
   { id: "AC", label: "AC", icon: <MdAir className={css.iconFilter} /> },
   {
@@ -30,10 +32,24 @@ const equipmentOptions = [
 ];
 
 const vehicleOptions = [
-  { type: "fullyIntegrated", label: "Fully Integrated" },
-  { type: "panelTruck", label: "Van" },
-  { type: "alcove", label: "Alcove" },
+  {
+    type: "fullyIntegrated",
+    label: "Fully Integrated",
+    icon: <FiGrid className={css.iconFilter} />,
+  },
+  {
+    type: "panelTruck",
+    label: "Van",
+    icon: <FiColumns className={css.iconFilter} />,
+  },
+  {
+    type: "alcove",
+    label: "Alcove",
+    icon: <MdOutlineViewComfy className={css.iconFilter} />,
+  },
 ];
+
+const handleClick = () => {};
 
 const Filters = () => {
   const {
@@ -66,14 +82,19 @@ const Filters = () => {
 
       <h2 className={css.vehicleTypeTitle}>Vehicle type</h2>
       <div className={css.vehicleTypeList}>
-        {vehicleOptions.map(({ type, label }) => {
+        {vehicleOptions.map(({ type, label, icon }) => {
           return (
             <button key={type} className={css.vehicleTypeBtn}>
+              {icon}
               {label}
             </button>
           );
         })}
       </div>
+
+      <button className={css.searchFilterBtn} onClick={handleClick}>
+        Search
+      </button>
     </>
   );
 };

@@ -99,3 +99,84 @@
   width: 30px;
   height: 30px;
 }
+
+/* Vechicle Type List */
+
+.vehicleTypeList {
+  max-width: 250px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  margin-left: 64px;
+}
+
+/* Vechicle Type Button */
+
+.vehicleTypeBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 112px;
+  background-color: white;
+  border: 1px solid #dadde1;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.5%;
+  text-align: center;
+  color: #101828;
+
+  border-radius: 12px;
+  border-width: 1px;
+  padding-top: 16px;
+  padding-right: 12px;
+  padding-bottom: 16px;
+  padding-left: 12px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.vehicleTypeBtn:hover {
+  border-color: #e44848;
+  scale: 1.01;
+}
+
+.vehicleTypeBtn:focus {
+  border-color: #e44848;
+}
+
+.btnActive {
+  border-color: #e44848;
+}
+
+/* Search Button */
+
+.searchFilterBtn {
+  background-color: #e44848;
+  border: 1px solid #e44848;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.5%;
+  padding: 16px 56px 16px 56px;
+  border-radius: 200px;
+  margin-top: 40px;
+  margin-left: 64px;
+  outline: none;
+
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.searchFilterBtn:hover {
+  background-color: #d84343;
+  cursor: pointer;
+}
+
+.searchFilterBtn:focus {
+  background-color: #d84343;
+  cursor: pointer;
+}
