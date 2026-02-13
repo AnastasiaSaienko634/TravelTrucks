@@ -49,6 +49,7 @@ const vehicleOptions = [
   },
 ];
 
+// Search
 const handleClick = () => {};
 
 const Filters = () => {
@@ -83,8 +84,13 @@ const Filters = () => {
       <h2 className={css.vehicleTypeTitle}>Vehicle type</h2>
       <div className={css.vehicleTypeList}>
         {vehicleOptions.map(({ type, label, icon }) => {
+          const active = vehicleType && vehicleType.includes(type);
           return (
-            <button key={type} className={css.vehicleTypeBtn}>
+            <button
+              onClick={() => setVehicleType(type)}
+              key={type}
+              className={`${css.vehicleTypeBtn} ${active ? css.btnActive : ""}`}
+            >
               {icon}
               {label}
             </button>
