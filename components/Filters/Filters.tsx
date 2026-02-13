@@ -65,9 +65,13 @@ const Filters = () => {
       </div>
 
       <h2 className={css.vehicleTypeTitle}>Vehicle type</h2>
-      <div className={css.equipmentList}>
+      <div className={css.vehicleTypeList}>
         {vehicleOptions.map(({ type, label }) => {
-          return <button key={type}>{label}</button>;
+          return (
+            <button key={type} className={css.vehicleTypeBtn}>
+              {label}
+            </button>
+          );
         })}
       </div>
     </>
