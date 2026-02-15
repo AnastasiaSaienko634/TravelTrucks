@@ -1,6 +1,5 @@
 "use client";
 import { useFilterStore } from "@/lib/store/campersStore";
-import React from "react";
 import css from "./Filters.module.css";
 // Icons
 import { TbAutomaticGearbox } from "react-icons/tb";

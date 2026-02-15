@@ -1,3 +1,4 @@
+/* Location Filter Container */
 .locationContainer {
   padding-top: 48px;
   padding-left: 64px;
@@ -13,6 +14,7 @@
   color: #6c717b;
 }
 
+/* Location Button */
 .btnLocation {
   margin-top: 8px;
   display: flex;
@@ -36,10 +38,13 @@
   outline: none;
 }
 
+/* Location Button Hover*/
+
 .btnLocation:hover {
   cursor: pointer;
 }
 
+/* Icon */
 .iconLocation {
   width: 20px;
   height: 20px;
@@ -47,6 +52,7 @@
   padding-left: 20px;
 }
 
+/* Location List Items */
 .locationListItems {
   display: flex;
   flex-direction: column;
@@ -61,6 +67,8 @@
   padding: 6px 0;
 }
 
+/* Location Item */
+
 .locationItem {
   padding: 12px 20px 12px 40px;
 
@@ -72,13 +80,13 @@
   transition: all 0.2s ease;
 }
 
-/* hover-эффект */
+/* Location Hover */
 .locationItem:hover {
   background-color: #ffffff;
   color: #000;
 }
 
-/* разделитель между пунктами */
+/* Location Item */
 .locationItem:not(:last-child) {
   border-bottom: 1px solid #eaeaea;
 }

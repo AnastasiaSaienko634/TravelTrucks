@@ -2,8 +2,9 @@
 import css from "./LocationDropdown.module.css";
 import { useState } from "react";
 import { locationList } from "@/types/locationList";
-import { CiMap } from "react-icons/ci";
 import { useFilterStore } from "@/lib/store/campersStore";
+// Icon
+import { CiMap } from "react-icons/ci";
 
 const LocationDropdown = () => {
   const city = useFilterStore((state) => state.city);

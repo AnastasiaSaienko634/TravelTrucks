@@ -80,6 +80,8 @@
   outline: none;
 }
 
+/* Vehicle Equipment Item Hover | Focus| Active */
+
 .btnSelect:hover {
   border-color: #e44848;
   scale: 1.01;
@@ -93,7 +95,7 @@
   border-color: #e44848;
 }
 
-/* Icon */
+/* Icon Filter */
 .iconFilter {
   padding-bottom: 8px;
   width: 30px;
@@ -139,6 +141,8 @@
   transition: all 0.3s ease;
 }
 
+/* Vechicle Type Button Hover | Focus | Active */
+
 .vehicleTypeBtn:hover {
   border-color: #e44848;
   scale: 1.01;
@@ -170,6 +174,8 @@
   color: #ffffff;
   transition: all 0.3s ease;
 }
+
+/* Search Button Button Hover | Focus  */
 
 .searchFilterBtn:hover {
   background-color: #d84343;
