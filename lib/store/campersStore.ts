@@ -28,7 +28,7 @@ export const useFilterStore = create<FilterStore>((set) => ({
 
   setVehicleType: (type) =>
     set((state) => ({
-      vehicleType: state.vehicleType === type ? null : type,
+      vehicleType: state.vehicleType === type ? "" : type,
     })),
 
   resetFilters: () =>

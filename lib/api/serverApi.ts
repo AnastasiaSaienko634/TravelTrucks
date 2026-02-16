@@ -37,8 +37,12 @@ export const fetchCampersByFilter = async (
   vehicleType: string,
   location: string,
 ) => {
+  const filteredEquipment: Record<string, boolean> = {};
+  Object.keys(vehicleEquipment).forEach((key) => {
+    if (vehicleEquipment[key]) filteredEquipment[key] = true;
+  });
   const response = await nextServer.get("/campers", {
-    params: { location: location, form: vehicleType, ...vehicleEquipment },
+    params: { location: location, form: vehicleType, ...filteredEquipment },
   });
   return response.data.items;
 };

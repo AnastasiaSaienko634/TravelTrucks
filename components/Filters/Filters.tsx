@@ -65,7 +65,7 @@ const Filters = () => {
       <h2 className={css.vichleEquipment}>Vehicle equipment</h2>
       <div className={css.equipmentList}>
         {equipmentOptions.map(({ id, label, icon }) => {
-          const active = equipment.includes(id);
+          const active = equipment[id] === true;
 
           return (
             <button
@@ -83,7 +83,7 @@ const Filters = () => {
       <h2 className={css.vehicleTypeTitle}>Vehicle type</h2>
       <div className={css.vehicleTypeList}>
         {vehicleOptions.map(({ type, label, icon }) => {
-          const active = vehicleType && vehicleType.includes(type);
+          const active = vehicleType === type;
           return (
             <button
               onClick={() => setVehicleType(type)}
@@ -97,9 +97,9 @@ const Filters = () => {
         })}
       </div>
 
-      <button className={css.searchFilterBtn} onClick={handleClick}>
+      {/* <button className={css.searchFilterBtn} onClick={handleClick}>
         Search
-      </button>
+      </button> */}
     </>
   );
 };
