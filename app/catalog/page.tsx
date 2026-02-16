@@ -9,7 +9,8 @@ import Filters from "@/components/Filters/Filters";
 
 const CatalogPage = () => {
   const city = useFilterStore((state) => state.city);
-
+  const vehicleType = useFilterStore((state) => state.vehicleType);
+  const vehicleEq = useFilterStore((state) => state.equipment);
   const [campers, setCampers] = useState([]);
 
   useEffect(() => {

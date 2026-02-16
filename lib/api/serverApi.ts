@@ -31,10 +31,14 @@ export const fetchCamperById = async (id: string) => {
   return response.data;
 };
 
-//Fetch by Categorie(location)
-export const fetchCampersbyCategorie = async (query: string) => {
+//Fetch by Filter(filter)
+export const fetchCampersbyFilter = async (
+  vehicleEquipment: Record<string, boolean>,
+  vehicleType: string,
+  city: string,
+) => {
   const response = await nextServer.get("/campers", {
-    params: { location: query },
+    params: { location: city, form: vehicleType, ...vehicleEquipment },
   });
   return response.data.items;
 };
