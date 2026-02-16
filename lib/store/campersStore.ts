@@ -2,8 +2,8 @@ import { create } from "zustand";
 
 interface FilterStore {
   city: string;
-  equipment: string[];
-  vehicleType: string | null;
+  equipment: Record<string, boolean>;
+  vehicleType: string;
 
   setCity: (city: string) => void;
   toggleEquipment: (item: string) => void;
@@ -13,16 +13,17 @@ interface FilterStore {
 
 export const useFilterStore = create<FilterStore>((set) => ({
   city: "",
-  equipment: [],
-  vehicleType: null,
+  equipment: {},
+  vehicleType: "",
 
   setCity: (city) => set({ city }),
 
   toggleEquipment: (item) =>
     set((state) => ({
-      equipment: state.equipment.includes(item)
-        ? state.equipment.filter((i) => i !== item)
-        : [...state.equipment, item],
+      equipment: {
+        ...state.equipment,
+        [item]: !state.equipment[item],
+      },
     })),
 
   setVehicleType: (type) =>
@@ -33,7 +34,7 @@ export const useFilterStore = create<FilterStore>((set) => ({
   resetFilters: () =>
     set({
       city: "",
-      equipment: [],
-      vehicleType: null,
+      equipment: {},
+      vehicleType: "",
     }),
 }));

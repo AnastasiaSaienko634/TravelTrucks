@@ -32,13 +32,13 @@ export const fetchCamperById = async (id: string) => {
 };
 
 //Fetch by Filter(filter)
-export const fetchCampersbyFilter = async (
+export const fetchCampersByFilter = async (
   vehicleEquipment: Record<string, boolean>,
   vehicleType: string,
-  city: string,
+  location: string,
 ) => {
   const response = await nextServer.get("/campers", {
-    params: { location: city, form: vehicleType, ...vehicleEquipment },
+    params: { location: location, form: vehicleType, ...vehicleEquipment },
   });
   return response.data.items;
 };
