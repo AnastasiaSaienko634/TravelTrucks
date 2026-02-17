@@ -10,6 +10,7 @@ import { MdAir } from "react-icons/md";
 import { MdOutlineViewComfy } from "react-icons/md";
 import { FiGrid } from "react-icons/fi";
 import { FiColumns } from "react-icons/fi";
+import { useState } from "react";
 const equipmentOptions = [
   { id: "AC", label: "AC", icon: <MdAir className={css.iconFilter} /> },
   {
@@ -52,6 +53,13 @@ const vehicleOptions = [
 const handleClick = () => {};
 
 const Filters = () => {
+  const [localEquipment, setLocalEquipment] = useState({
+    AC: false,
+    automatic: false,
+    kitchen: false,
+    TV: false,
+    bathroom: false,
+  });
   const {
     equipment,
     vehicleType,
@@ -97,9 +105,9 @@ const Filters = () => {
         })}
       </div>
 
-      {/* <button className={css.searchFilterBtn} onClick={handleClick}>
+      <button className={css.searchFilterBtn} onClick={handleClick}>
         Search
-      </button> */}
+      </button>
     </>
   );
 };
