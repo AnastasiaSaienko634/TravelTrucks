@@ -1,28 +1,36 @@
 import { create } from "zustand";
 
+export const defaultEquipment: Record<string, boolean> = {
+  AC: false,
+  automatic: false,
+  kitchen: false,
+  TV: false,
+  bathroom: false,
+};
+
 interface FilterStore {
   city: string;
   equipment: Record<string, boolean>;
   vehicleType: string;
 
   setCity: (city: string) => void;
-  toggleEquipment: (item: string) => void;
+  toggleEquipment: (items: Record<string, boolean>) => void;
   setVehicleType: (type: string) => void;
   resetFilters: () => void;
 }
 
 export const useFilterStore = create<FilterStore>((set) => ({
   city: "",
-  equipment: {},
+  equipment: defaultEquipment,
   vehicleType: "",
 
   setCity: (city) => set({ city }),
 
-  toggleEquipment: (item) =>
+  toggleEquipment: (items: Record<string, boolean>) =>
     set((state) => ({
       equipment: {
         ...state.equipment,
-        [item]: !state.equipment[item],
+        ...items,
       },
     })),
 
@@ -34,7 +42,7 @@ export const useFilterStore = create<FilterStore>((set) => ({
   resetFilters: () =>
     set({
       city: "",
-      equipment: {},
+      equipment: defaultEquipment,
       vehicleType: "",
     }),
 }));

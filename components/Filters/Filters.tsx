@@ -1,8 +1,7 @@
 "use client";
-import { useFilterStore } from "@/lib/store/campersStore";
+import { defaultEquipment, useFilterStore } from "@/lib/store/campersStore";
 import css from "./Filters.module.css";
 // Icons
-import { TbAutomaticGearbox } from "react-icons/tb";
 import { FaGasPump } from "react-icons/fa";
 import { GrCafeteria } from "react-icons/gr";
 import { FaBath } from "react-icons/fa";
@@ -13,11 +12,6 @@ import { FiColumns } from "react-icons/fi";
 import { useState } from "react";
 const equipmentOptions = [
   { id: "AC", label: "AC", icon: <MdAir className={css.iconFilter} /> },
-  {
-    id: "automatic",
-    label: "Automatic",
-    icon: <TbAutomaticGearbox className={css.iconFilter} />,
-  },
   {
     id: "kitchen",
     label: "Kitchen",
@@ -49,17 +43,19 @@ const vehicleOptions = [
   },
 ];
 
-// Search
-const handleClick = () => {};
-
 const Filters = () => {
-  const [localEquipment, setLocalEquipment] = useState({
-    AC: false,
-    automatic: false,
-    kitchen: false,
-    TV: false,
-    bathroom: false,
-  });
+  const [localEquipment, setLocalEquipment] =
+    useState<Record<string, boolean>>(defaultEquipment);
+
+  const [localVehicleType, setLocalVehicleType] = useState<string>("");
+
+  const toggleLocalEquipment = (id: string) => {
+    setLocalEquipment((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
+
   const {
     equipment,
     vehicleType,
@@ -67,18 +63,29 @@ const Filters = () => {
     setVehicleType,
     resetFilters,
   } = useFilterStore();
+
+  // Search
+  const handleClick = () => {
+    if (localEquipment) {
+      toggleEquipment(localEquipment);
+    }
+
+    if (localVehicleType) {
+      setVehicleType(localVehicleType);
+    }
+  };
   return (
     <>
       <h3 className={css.filtersTitle}>Filters</h3>
       <h2 className={css.vichleEquipment}>Vehicle equipment</h2>
       <div className={css.equipmentList}>
         {equipmentOptions.map(({ id, label, icon }) => {
-          const active = equipment[id] === true;
+          const active = localEquipment[id];
 
           return (
             <button
               key={id}
-              onClick={() => toggleEquipment(id)}
+              onClick={() => toggleLocalEquipment(id)}
               className={`${css.btnSelect} ${active ? css.btnActive : ""}`}
             >
               {icon}
@@ -91,10 +98,10 @@ const Filters = () => {
       <h2 className={css.vehicleTypeTitle}>Vehicle type</h2>
       <div className={css.vehicleTypeList}>
         {vehicleOptions.map(({ type, label, icon }) => {
-          const active = vehicleType === type;
+          const active = localVehicleType === type;
           return (
             <button
-              onClick={() => setVehicleType(type)}
+              onClick={() => setLocalVehicleType(type)}
               key={type}
               className={`${css.vehicleTypeBtn} ${active ? css.btnActive : ""}`}
             >
