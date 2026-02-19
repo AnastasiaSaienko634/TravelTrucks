@@ -4,3 +4,8 @@
   margin: 0px;
   padding: 0px;
 }
+
+.camperListContainer {
+  margin-left: auto;
+  margin-right: auto;
+}
