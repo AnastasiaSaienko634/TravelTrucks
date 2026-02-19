@@ -35,7 +35,9 @@ const CatalogPage = () => {
         <LocationDropdown />
         <Filters />
       </div>
-      <CamperList campers={campers} />
+      <div className={css.camperListContainer}>
+        <CamperList campers={campers} />
+      </div>
     </div>
   );
 };
