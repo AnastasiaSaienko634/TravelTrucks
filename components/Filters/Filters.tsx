@@ -2,6 +2,7 @@
 import { defaultEquipment, useFilterStore } from "@/lib/store/campersStore";
 import css from "./Filters.module.css";
 // Icons
+import { LiaTrashAltSolid } from "react-icons/lia";
 import { FaGasPump } from "react-icons/fa";
 import { GrCafeteria } from "react-icons/gr";
 import { FaBath } from "react-icons/fa";
@@ -111,10 +112,21 @@ const Filters = () => {
           );
         })}
       </div>
-
-      <button className={css.searchFilterBtn} onClick={handleClick}>
-        Search
-      </button>
+      <div className={css.buttons}>
+        <button className={css.searchFilterBtn} onClick={handleClick}>
+          Search
+        </button>
+        <button
+          className={css.resetFiltersBtn}
+          onClick={() => {
+            resetFilters();
+            setLocalEquipment(defaultEquipment);
+            setLocalVehicleType("");
+          }}
+        >
+          <LiaTrashAltSolid className={css.resetIcon} />
+        </button>
+      </div>
     </>
   );
 };
