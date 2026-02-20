@@ -3,6 +3,7 @@ import React from "react";
 import css from "./Header.module.css";
 
 const Header = () => {
+  // Navigation bar
   return (
     <header className={css.header}>
       <Link href="/" aria-label="Home" className={css.logo}>

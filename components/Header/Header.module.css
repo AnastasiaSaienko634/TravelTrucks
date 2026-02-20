@@ -1,3 +1,4 @@
+/* Header */
 .header {
   display: flex;
   padding-top: 28px;
@@ -6,6 +7,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
+/* Logo */
 .logo {
   font-size: 24px;
   font-weight: 800;
@@ -15,11 +17,12 @@
   color: #101828;
   z-index: 1000;
 }
-
+/* Logo Right Part */
 .logoPart {
   color: #475467;
 }
 
+/* Navigiation container*/
 .navigation {
   flex: 1;
   display: flex;
@@ -27,6 +30,7 @@
   align-items: center;
 }
 
+/* Navigation List */
 .navigationList {
   display: flex;
   gap: 32px;
@@ -35,6 +39,7 @@
   padding: 0px;
 }
 
+/* Navigation Link */
 .navLink {
   font-weight: 500;
   font-size: 16px;
@@ -42,9 +47,12 @@
   letter-spacing: 0%;
   text-decoration: none;
   color: #101828;
-  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+  transition:
+    color 0.3s ease,
+    text-decoration-color 0.3s ease;
 }
 
+/* Navigation Link | hover | active | focus */
 .navLink:hover {
   color: #d84343;
 }
