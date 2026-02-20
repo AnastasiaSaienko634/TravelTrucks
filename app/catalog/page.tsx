@@ -19,6 +19,7 @@ const CatalogPage = () => {
       const vehicleEquipment = vehicleEq ? vehicleEq : {};
       const vechicleType = vehicleTp ? vehicleTp : "";
 
+      // Fetch Campers by Filters
       const response = await fetchCampersByFilter(
         vehicleEquipment,
         vechicleType,
@@ -32,10 +33,13 @@ const CatalogPage = () => {
   return (
     <div className={css.catalogContainer}>
       <div>
+        {/* Dropdown Location */}
         <LocationDropdown />
+        {/* Camper Filter */}
         <Filters />
       </div>
       <div className={css.camperListContainer}>
+        {/* Camper List */}
         <CamperList campers={campers} />
       </div>
     </div>

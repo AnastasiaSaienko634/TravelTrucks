@@ -52,6 +52,7 @@ const CamperDetailsClient = () => {
       <ul className={css.camperGallery}>
         {camper.gallery.map((image, index) => (
           <li key={index}>
+            {/* Photos */}
             <img
               src={image.thumb}
               alt="Camper photo"
@@ -62,6 +63,7 @@ const CamperDetailsClient = () => {
           </li>
         ))}
       </ul>
+      {/* Camper Truck description */}
       <p className={css.camperDescription}>{camper.description}</p>
 
       {/* Tab Features and Reviews */}
