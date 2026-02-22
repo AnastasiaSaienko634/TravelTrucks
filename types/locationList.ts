@@ -1,3 +1,4 @@
+//  List City for Filter
 export const locationList = [
   { slug: "dnipro", label: "Ukraine, Dnipro" },
   { slug: "odesa", label: "Ukraine, Odesa" },
