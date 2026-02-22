@@ -1,11 +1,12 @@
 import { Camper } from "@/types/campers";
 import { nextServer } from "./api";
 
+// Fetch all Campers response
 interface FetchCampersResponse {
   total: number;
   items: Camper[];
 }
-
+// Fetch all Campers interface
 interface FetchParamsCampers {
   pageParam: number;
   limit: number;

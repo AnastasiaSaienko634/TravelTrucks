@@ -43,6 +43,7 @@
   font-weight: 600;
 }
 
+/* Stars */
 .stars {
   display: flex;
   gap: 4px;
