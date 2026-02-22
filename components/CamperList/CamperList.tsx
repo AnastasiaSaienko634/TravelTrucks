@@ -9,11 +9,11 @@ interface Props {
 }
 
 const CamperList = ({ campers }: Props) => {
-  console.log(campers);
   const [visiableCount, setVisiableCount] = useState(4);
   const visiableCampers = campers.slice(0, visiableCount);
   return (
     <main>
+      {/* Camper List */}
       <ul className={css.camperList}>
         {visiableCampers.map((camper: Camper) => (
           <li key={camper.id}>
@@ -21,6 +21,7 @@ const CamperList = ({ campers }: Props) => {
           </li>
         ))}
       </ul>
+      {/* Load More button */}
       {visiableCount < campers.length && (
         <button
           className={css.loadMoreBtn}

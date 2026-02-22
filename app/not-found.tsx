@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import css from "../app/not-found.module.css";
 import Link from "next/link";
 
+// Metadata
 export const metadata: Metadata = {
   title: "Cторінку не було знайдено",
   description: "Сторінку яку ви шукали не було знайдено...",
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
   },
 };
 
+// NotFound page
 const NotFound = () => {
   return (
     <div className={css.notFoundContainer}>

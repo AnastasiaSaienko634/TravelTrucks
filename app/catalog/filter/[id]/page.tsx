@@ -11,6 +11,7 @@ interface Props {
   params: Promise<{ id: string }>;
 }
 
+// Camper Details Page
 const CamperDetailsPage = async ({ params }: Props) => {
   const { id } = await params;
   const queryClient = new QueryClient();

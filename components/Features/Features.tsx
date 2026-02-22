@@ -13,6 +13,7 @@ interface Props {
 }
 
 const Features = ({ camper }: Props) => {
+  // Details List
   const details = [
     { label: "Form", value: camper.form },
     { label: "Length", value: camper.length },
