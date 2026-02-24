@@ -92,6 +92,7 @@
   transition: background-color 0.25s ease;
 }
 
+/* Booking Button | hover | active | focus */
 .bookingButton:hover {
   background-color: #d84343;
   cursor: pointer;
