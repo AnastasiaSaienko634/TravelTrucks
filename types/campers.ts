@@ -1,3 +1,4 @@
+// Camper Interface
 export interface Camper {
   id: string;
   name: string;
