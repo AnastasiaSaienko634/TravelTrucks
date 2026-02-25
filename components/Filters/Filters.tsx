@@ -3,7 +3,7 @@ import { defaultEquipment, useFilterStore } from "@/lib/store/campersStore";
 import css from "./Filters.module.css";
 // Icons
 import { LiaTrashAltSolid } from "react-icons/lia";
-import { FaGasPump } from "react-icons/fa";
+import { MdTv } from "react-icons/md";
 import { GrCafeteria } from "react-icons/gr";
 import { FaBath } from "react-icons/fa";
 import { MdAir } from "react-icons/md";
@@ -11,6 +11,7 @@ import { MdOutlineViewComfy } from "react-icons/md";
 import { FiGrid } from "react-icons/fi";
 import { FiColumns } from "react-icons/fi";
 import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 const equipmentOptions = [
   { id: "AC", label: "AC", icon: <MdAir className={css.iconFilter} /> },
   {
@@ -18,7 +19,7 @@ const equipmentOptions = [
     label: "Kitchen",
     icon: <GrCafeteria className={css.iconFilter} />,
   },
-  { id: "TV", label: "TV", icon: <FaGasPump className={css.iconFilter} /> },
+  { id: "TV", label: "TV", icon: <MdTv className={css.iconFilter} /> },
   {
     id: "bathroom",
     label: "Bathroom",
@@ -119,6 +120,7 @@ const Filters = () => {
         <button
           className={css.resetFiltersBtn}
           onClick={() => {
+            toast.success("Filters was cleaned!");
             resetFilters();
             setLocalEquipment(defaultEquipment);
             setLocalVehicleType("");
@@ -127,6 +129,8 @@ const Filters = () => {
           <LiaTrashAltSolid className={css.resetIcon} />
         </button>
       </div>
+      {/* react hot toast */}
+      <Toaster />
     </>
   );
 };
