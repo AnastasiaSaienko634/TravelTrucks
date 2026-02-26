@@ -13,6 +13,7 @@ import Reviews from "@/components/Reviews/Reviews";
 import { RiStarSFill } from "react-icons/ri";
 import { CiMap } from "react-icons/ci";
 import Loader from "@/components/Loader/Loader";
+import Image from "next/image";
 const CamperDetailsClient = () => {
   const [activeTab, setActiveTab] = useState<"features" | "reviews">(
     "features",
@@ -48,18 +49,20 @@ const CamperDetailsClient = () => {
       </div>
       <p className={css.camperPrice}>€{camper.price}</p>
       <ul className={css.camperGallery}>
-        {camper.gallery.map((image, index) => (
-          <li key={index}>
-            {/* Photos */}
-            <img
-              src={image.thumb}
-              alt="Camper photo"
-              className={css.camperImg}
-              width={292}
-              height={312}
-            />
-          </li>
-        ))}
+        {camper.gallery
+          .filter((image) => image.thumb)
+          .map((image, index) => (
+            <li key={index}>
+              {/* Photos */}
+              <img
+                src={image.thumb}
+                alt="Camper photo"
+                className={css.camperImg}
+                width={292}
+                height={312}
+              />
+            </li>
+          ))}
       </ul>
       {/* Camper Truck description */}
       <p className={css.camperDescription}>{camper.description}</p>

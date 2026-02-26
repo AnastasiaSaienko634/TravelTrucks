@@ -8,7 +8,7 @@
   padding-left: 52px;
   padding-right: 52px;
   border-radius: 10px;
-  max-width: 631px;
+  max-width: 527px;
 }
 
 /* Features */
@@ -17,14 +17,14 @@
   flex-wrap: wrap;
   gap: 8px;
   padding: 0;
-  margin: 0 0 24px;
   padding-top: 44px;
   padding-bottom: 100px;
   list-style: none;
 }
 
+/* Features Item */
 .features li {
-  padding: 10px 12px;
+  padding: 12px 18px;
   background-color: #e5e6e7;
   border-radius: 100px;
   font-weight: 500;
@@ -57,12 +57,15 @@
 
 .details {
   display: flex;
-  gap: 16px;
+  gap: 21px;
   flex-direction: column;
   margin: 0px;
   padding: 0px;
+  padding-top: 24px;
   padding-bottom: 44px;
 }
+
+/* Details Item */
 
 .itemDetails {
   text-transform: capitalize;
