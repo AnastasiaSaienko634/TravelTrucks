@@ -12,7 +12,7 @@ import Reviews from "@/components/Reviews/Reviews";
 // Icons
 import { RiStarSFill } from "react-icons/ri";
 import { CiMap } from "react-icons/ci";
-
+import Loader from "@/components/Loader/Loader";
 const CamperDetailsClient = () => {
   const [activeTab, setActiveTab] = useState<"features" | "reviews">(
     "features",
@@ -29,9 +29,7 @@ const CamperDetailsClient = () => {
     refetchOnMount: false,
   });
 
-  console.log(camper);
-
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <Loader />;
 
   if (error || !camper) return <p>Something went wrong...</p>;
   return (
