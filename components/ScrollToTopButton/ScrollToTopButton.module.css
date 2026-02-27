@@ -1,9 +1,43 @@
 /* Scroll on Top Button */
 
 .scrollOnTopBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 18px;
+  background-color: #e44848;
+  outline: none;
+  border-radius: 12px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+/* Scroll on Top Button | Focus | Active | Hover */
+
+.scrollOnTopBtn:focus {
+  background-color: #d84343;
+  cursor: pointer;
+}
+
+.scrollOnTopBtn:hover {
+  background-color: #d84343;
+  cursor: pointer;
+}
+
+.scrollOnTopBtn:active {
+  background-color: #d84343;
+  cursor: pointer;
 }
 
 /* Icon arrow */
 .iconArrow {
-  color: red;
+  color: white;
+  width: 25px;
+  height: 25px;
+}
+
+/* Button Scroll on Top Container */
+.btnScrollTopContainer {
+  display: flex;
+  justify-content: right;
 }

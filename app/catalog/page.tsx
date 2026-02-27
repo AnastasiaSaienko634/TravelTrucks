@@ -43,7 +43,6 @@ const CatalogPage = () => {
         {/* Camper List */}
         <CamperList campers={campers} />
       </div>
-      <ScrollToTopButton />
     </div>
   );
 };

@@ -22,13 +22,15 @@ const ScrollToTopButton = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
-    <button
-      className={css.scrollOnTopBtn}
-      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      style={{ opacity: visible ? 1 : 0 }}
-    >
-      <IoArrowUpOutline />
-    </button>
+    <div className={css.btnScrollTopContainer}>
+      <button
+        className={css.scrollOnTopBtn}
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        style={{ opacity: visible ? 1 : 0 }}
+      >
+        <IoArrowUpOutline className={css.iconArrow} />
+      </button>
+    </div>
   );
 };
 

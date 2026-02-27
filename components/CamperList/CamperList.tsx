@@ -3,6 +3,7 @@ import { useState } from "react";
 import CamperCard from "../CamperCard/CamperCard";
 import css from "./CamperList.module.css";
 import { Camper } from "@/types/campers";
+import ScrollToTopButton from "../ScrollToTopButton/ScrollToTopButton";
 
 interface Props {
   campers: Camper[];
@@ -30,6 +31,7 @@ const CamperList = ({ campers }: Props) => {
           Load more
         </button>
       )}
+      <ScrollToTopButton />
     </main>
   );
 };
