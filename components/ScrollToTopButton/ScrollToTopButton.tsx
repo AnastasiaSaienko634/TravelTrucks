@@ -5,7 +5,31 @@ import css from "./ScrollToTopButton.module.css";
 import { IoArrowUpOutline } from "react-icons/io5";
 
 const ScrollToTopButton = () => {
-  return <></>;
+  const [progress, setProgress] = useState(0);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const scrollTop = window.scrollY;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+
+      setProgress(Math.min(1, scrollTop / max));
+      setVisible(scrollTop > 400);
+    };
+
+    window.addEventListener("scroll", onScroll);
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  return (
+    <button
+      className={css.scrollOnTopBtn}
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      style={{ opacity: visible ? 1 : 0 }}
+    >
+      <IoArrowUpOutline />
+    </button>
+  );
 };
 
 export default ScrollToTopButton;

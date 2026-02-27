@@ -1,7 +1,9 @@
-.scrollBtn {
-  position: fixed;
+/* Scroll on Top Button */
+
+.scrollOnTopBtn {
 }
 
+/* Icon arrow */
 .iconArrow {
   color: red;
 }

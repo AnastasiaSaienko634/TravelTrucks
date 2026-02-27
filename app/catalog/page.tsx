@@ -6,6 +6,7 @@ import { useFilterStore } from "@/lib/store/campersStore";
 import { useEffect, useState } from "react";
 import { fetchCampersByFilter } from "@/lib/api/serverApi";
 import Filters from "@/components/Filters/Filters";
+import ScrollToTopButton from "@/components/ScrollToTopButton/ScrollToTopButton";
 
 const CatalogPage = () => {
   const city = useFilterStore((state) => state.city);
@@ -42,6 +43,7 @@ const CatalogPage = () => {
         {/* Camper List */}
         <CamperList campers={campers} />
       </div>
+      <ScrollToTopButton />
     </div>
   );
 };
