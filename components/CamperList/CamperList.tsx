@@ -24,14 +24,16 @@ const CamperList = ({ campers }: Props) => {
       </ul>
       {/* Load More button */}
       {visiableCount < campers.length && (
-        <button
-          className={css.loadMoreBtn}
-          onClick={() => setVisiableCount((prev) => prev + 4)}
-        >
-          Load more
-        </button>
+        <div className={css.visiableBtnLoadMr}>
+          <button
+            className={css.loadMoreBtn}
+            onClick={() => setVisiableCount((prev) => prev + 4)}
+          >
+            Load more
+          </button>
+          <ScrollToTopButton />
+        </div>
       )}
-      <ScrollToTopButton />
     </main>
   );
 };

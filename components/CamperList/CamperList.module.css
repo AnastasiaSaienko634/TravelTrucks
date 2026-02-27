@@ -40,3 +40,10 @@
   border-color: #d84343;
   cursor: pointer;
 }
+
+/* Container Visiable Button Load More */
+.visiableBtnLoadMr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
