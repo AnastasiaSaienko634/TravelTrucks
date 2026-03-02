@@ -4,11 +4,13 @@
   padding-top: 28px;
   padding-bottom: 28px;
   margin: 0px;
+  position: relative;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 /* Logo */
 .logo {
+  position: absolute;
   font-size: 24px;
   font-weight: 800;
   padding-left: 64px;
