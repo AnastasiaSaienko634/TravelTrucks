@@ -76,6 +76,7 @@ const Filters = () => {
       setVehicleType(localVehicleType);
     }
   };
+
   return (
     <>
       <h3 className={css.filtersTitle}>Filters</h3>

@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 export const defaultEquipment: Record<string, boolean> = {
   AC: false,
@@ -19,30 +20,42 @@ interface FilterStore {
   resetFilters: () => void;
 }
 
-export const useFilterStore = create<FilterStore>((set) => ({
-  city: "",
-  equipment: defaultEquipment,
-  vehicleType: "",
-
-  setCity: (city) => set({ city }),
-
-  toggleEquipment: (items: Record<string, boolean>) =>
-    set((state) => ({
-      equipment: {
-        ...state.equipment,
-        ...items,
-      },
-    })),
-
-  setVehicleType: (type) =>
-    set((state) => ({
-      vehicleType: state.vehicleType === type ? "" : type,
-    })),
-
-  resetFilters: () =>
-    set({
+export const useFilterStore = create<FilterStore>()(
+  persist(
+    (set) => ({
       city: "",
       equipment: defaultEquipment,
       vehicleType: "",
+
+      setCity: (city) => set({ city }),
+
+      toggleEquipment: (items) =>
+        set((state) => ({
+          equipment: {
+            ...state.equipment,
+            ...items,
+          },
+        })),
+
+      setVehicleType: (type) =>
+        set((state) => ({
+          vehicleType: state.vehicleType === type ? "" : type,
+        })),
+
+      resetFilters: () =>
+        set({
+          city: "",
+          equipment: defaultEquipment,
+          vehicleType: "",
+        }),
     }),
-}));
+    {
+      name: "camper-filters", // localStorage key
+      partialize: (state) => ({
+        city: state.city,
+        equipment: state.equipment,
+        vehicleType: state.vehicleType,
+      }),
+    },
+  ),
+);
