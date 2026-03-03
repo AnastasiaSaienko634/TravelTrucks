@@ -63,6 +63,15 @@
 }
 
 .rating {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 0%;
+  color: #101828;
+
   display: flex;
   align-items: center;
   gap: 4px;
@@ -72,6 +81,12 @@
   display: flex;
   align-items: center;
   gap: 4px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  color: #101828;
 }
 
 /* Description */
@@ -95,6 +110,17 @@
   list-style: none;
 }
 
+.itemFeatures {
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+}
 .features li {
   padding: 12px 18px;
   background-color: #f2f4f7;
@@ -136,19 +162,12 @@
 }
 
 .mapIcon {
-  width: 16px;
-  height: 16px;
+  color: #101828;
+  width: 18px;
+  height: 18px;
 }
 
 .iconFeatures {
   width: 20px;
   height: 20px;
-}
-
-/* Features */
-.itemFeatures {
-  text-transform: capitalize;
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }

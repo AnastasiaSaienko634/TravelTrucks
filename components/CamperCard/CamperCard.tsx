@@ -37,6 +37,7 @@ const CamperCard = ({ camper }: CamperCardProp) => {
         <div className={css.meta}>
           <span className={css.rating}>
             <RiStarSFill className={css.iconStar} /> {camper.rating.toFixed(1)}
+            (Reviewes)
           </span>
           <span className={css.location}>
             {" "}
