@@ -6,7 +6,7 @@
   background-repeat: no-repeat;
   width: 100%;
   color: #333;
-  min-height: calc(100vh - 85px);
+  min-height: calc(100vh - 80px);
   display: flex;
   justify-content: center;
   flex-direction: column;

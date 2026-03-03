@@ -2,11 +2,12 @@
 .camperContainer {
   display: flex;
   flex-direction: column;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 48px;
-  padding-right: 64px;
-  padding-left: 64px;
+
+  max-width: 1312px;
+  width: 100%;
+  margin: 0 auto;
+
+  padding: 48px 0px 0;
 }
 /* Icons */
 .iconStar {
@@ -63,8 +64,6 @@
 .camperGallery {
   display: flex;
   gap: 48px;
-  margin: 0px;
-  padding: 0px;
   padding-top: 28px;
 }
 
@@ -85,7 +84,6 @@
 /* Features & Reviews */
 .buttons {
   display: flex;
-  margin-right: auto;
   gap: 40px;
   position: relative;
 }
