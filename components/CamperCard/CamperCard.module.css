@@ -38,14 +38,19 @@
 }
 
 .title {
-  font-size: 20px;
   font-weight: 600;
-  margin: 0;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0%;
+  color: #101828;
 }
 
 .price {
-  font-size: 20px;
   font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0%;
+  color: #101828;
 }
 
 /* Meta */
@@ -71,9 +76,13 @@
 
 /* Description */
 .description {
-  margin: 16px 0;
-  color: #555;
-  line-height: 1.4;
+  margin: 24px 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+
+  color: #475467;
 }
 
 /* Features */

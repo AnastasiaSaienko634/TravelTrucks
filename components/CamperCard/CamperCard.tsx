@@ -29,8 +29,8 @@ const CamperCard = ({ camper }: CamperCardProp) => {
       <div className={css.content}>
         {/* Header */}
         <div className={css.header}>
-          <h3 className={css.title}>{camper.name}</h3>
-          <span className={css.price}>€{camper.price.toFixed(2)}</span>
+          <h2 className={css.title}>{camper.name}</h2>
+          <h2 className={css.price}>€{camper.price.toFixed(2)}</h2>
         </div>
 
         {/* Rating & location */}
