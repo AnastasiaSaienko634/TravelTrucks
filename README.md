@@ -43,8 +43,8 @@ git clone <REPOSITORY_URL>
 ```
 ---
 
-##Author
-- **Name: Anastasia Saienko
-- **Email: anastasiasaienko634@gmail.com
-- **GitHub: AnastasiaSaienko634
+Author
+- Name: Anastasia Saienko
+- Email: anastasiasaienko634@gmail.com
+- GitHub: AnastasiaSaienko634
 
