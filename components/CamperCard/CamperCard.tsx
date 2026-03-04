@@ -9,11 +9,13 @@ import { GrCafeteria } from "react-icons/gr";
 import { FaBath } from "react-icons/fa";
 import { MdAir } from "react-icons/md";
 import { CiMap } from "react-icons/ci";
+import { FaRegHeart } from "react-icons/fa";
 interface CamperCardProp {
   camper: Camper;
 }
 
 const CamperCard = ({ camper }: CamperCardProp) => {
+  const handleClick = () => {};
   return (
     <div className={css.card}>
       {/* Image */}
@@ -30,7 +32,12 @@ const CamperCard = ({ camper }: CamperCardProp) => {
         {/* Header */}
         <div className={css.header}>
           <h2 className={css.title}>{camper.name}</h2>
-          <h2 className={css.price}>€{camper.price.toFixed(2)}</h2>
+          <div className={css.priceFavoritContainer}>
+            <h2 className={css.price}>€{camper.price.toFixed(2)}</h2>
+            <button className={css.favoritebtn} onClick={handleClick}>
+              <FaRegHeart className={css.favoriteIcon} />
+            </button>
+          </div>
         </div>
 
         {/* Rating & location */}

@@ -37,6 +37,11 @@
   align-items: center;
 }
 
+.priceFavoritContainer {
+  display: flex;
+  gap: 12px;
+}
+
 .title {
   font-weight: 600;
   font-size: 24px;
@@ -46,6 +51,7 @@
 }
 
 .price {
+  text-align: end;
   font-weight: 600;
   font-size: 24px;
   line-height: 32px;
@@ -170,4 +176,21 @@
 .iconFeatures {
   width: 20px;
   height: 20px;
+}
+
+/* hearth icon */
+.favoriteIcon {
+  color: #101828;
+  width: 24px;
+  height: 26px;
+}
+
+/* Favorite Truck Button */
+.favoritebtn {
+  background-color: white;
+  border: none;
+}
+
+.favoritebtn:hover {
+  cursor: pointer;
 }
