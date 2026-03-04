@@ -194,3 +194,7 @@
 .favoritebtn:hover {
   cursor: pointer;
 }
+
+.active {
+  color: #e44848;
+}

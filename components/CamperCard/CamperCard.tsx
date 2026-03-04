@@ -10,12 +10,15 @@ import { FaBath } from "react-icons/fa";
 import { MdAir } from "react-icons/md";
 import { CiMap } from "react-icons/ci";
 import { FaRegHeart } from "react-icons/fa";
+import { useFavoriteStore } from "@/lib/store/favoriteStore";
 interface CamperCardProp {
   camper: Camper;
 }
 
 const CamperCard = ({ camper }: CamperCardProp) => {
-  const handleClick = () => {};
+  const { favorites, toggleFavorite } = useFavoriteStore();
+  const isFavorite = favorites.includes(camper.id);
+
   return (
     <div className={css.card}>
       {/* Image */}
@@ -34,8 +37,13 @@ const CamperCard = ({ camper }: CamperCardProp) => {
           <h2 className={css.title}>{camper.name}</h2>
           <div className={css.priceFavoritContainer}>
             <h2 className={css.price}>€{camper.price.toFixed(2)}</h2>
-            <button className={css.favoritebtn} onClick={handleClick}>
-              <FaRegHeart className={css.favoriteIcon} />
+            <button
+              className={css.favoritebtn}
+              onClick={() => toggleFavorite(camper.id)}
+            >
+              <FaRegHeart
+                className={`${css.favoriteIcon} ${isFavorite ? css.active : ""}`}
+              />
             </button>
           </div>
         </div>

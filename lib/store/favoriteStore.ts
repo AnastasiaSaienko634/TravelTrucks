@@ -1,25 +1,27 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-interface FavoriteTruck {
-  favorite: boolean;
-  setFavoriteTruck: (truck: boolean) => void;
+interface FavoriteStore {
+  favorites: string[];
+  toggleFavorite: (id: string) => void;
 }
 
-export const useFilterStore = create<FavoriteTruck>()(
+export const useFavoriteStore = create<FavoriteStore>()(
   persist(
     (set) => ({
-      favorite: false,
+      favorites: [],
 
-      setFavoriteTruck: (truck) =>
-        set({
-          favorite: truck,
-        }),
+      toggleFavorite: (id) =>
+        set((state) => ({
+          favorites: state.favorites.includes(id)
+            ? state.favorites.filter((fav) => fav !== id)
+            : [...state.favorites, id],
+        })),
     }),
     {
       name: "camper-favorite",
       partialize: (state) => ({
-        favorite: state.favorite,
+        favorites: state.favorites,
       }),
     },
   ),
