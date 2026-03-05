@@ -61,7 +61,9 @@ const CamperCard = ({ camper }: CamperCardProp) => {
         </div>
 
         {/* Description */}
-        <p className={css.description}>{camper.description}</p>
+        <p className={css.description}>
+          {camper.description.split(" ", 10).join(" ")}...
+        </p>
 
         {/* Features */}
         <ul className={css.features}>

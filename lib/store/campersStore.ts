@@ -24,18 +24,15 @@ export const useFilterStore = create<FilterStore>()(
   persist(
     (set) => ({
       city: "",
-      equipment: defaultEquipment,
+      equipment: { ...defaultEquipment },
       vehicleType: "",
 
       setCity: (city) => set({ city }),
 
       toggleEquipment: (items) =>
-        set((state) => ({
-          equipment: {
-            ...state.equipment,
-            ...items,
-          },
-        })),
+        set({
+          equipment: { ...items },
+        }),
 
       setVehicleType: (type) =>
         set((state) => ({
@@ -45,7 +42,7 @@ export const useFilterStore = create<FilterStore>()(
       resetFilters: () =>
         set({
           city: "",
-          equipment: defaultEquipment,
+          equipment: { ...defaultEquipment },
           vehicleType: "",
         }),
     }),

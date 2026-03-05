@@ -10,7 +10,7 @@ import { MdAir } from "react-icons/md";
 import { MdOutlineViewComfy } from "react-icons/md";
 import { FiGrid } from "react-icons/fi";
 import { FiColumns } from "react-icons/fi";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 const equipmentOptions = [
   { id: "AC", label: "AC", icon: <MdAir className={css.iconFilter} /> },
@@ -46,11 +46,21 @@ const vehicleOptions = [
 ];
 
 const Filters = () => {
-  const [localEquipment, setLocalEquipment] =
-    useState<Record<string, boolean>>(defaultEquipment);
+  const { toggleEquipment, setVehicleType, resetFilters } = useFilterStore();
 
-  const [localVehicleType, setLocalVehicleType] = useState<string>("");
+  const equipment = useFilterStore((state) => state.equipment);
+  const vehicleType = useFilterStore((state) => state.vehicleType);
 
+  const [localEquipment, setLocalEquipment] = useState(equipment);
+  const [localVehicleType, setLocalVehicleType] = useState(vehicleType);
+
+  useEffect(() => {
+    setLocalEquipment(equipment);
+  }, [equipment]);
+
+  useEffect(() => {
+    setLocalVehicleType(vehicleType);
+  }, [vehicleType]);
   const toggleLocalEquipment = (id: string) => {
     setLocalEquipment((prev) => ({
       ...prev,
@@ -58,23 +68,10 @@ const Filters = () => {
     }));
   };
 
-  const {
-    equipment,
-    vehicleType,
-    toggleEquipment,
-    setVehicleType,
-    resetFilters,
-  } = useFilterStore();
-
   // Search
   const handleClick = () => {
-    if (localEquipment) {
-      toggleEquipment(localEquipment);
-    }
-
-    if (localVehicleType) {
-      setVehicleType(localVehicleType);
-    }
+    toggleEquipment(localEquipment);
+    setVehicleType(localVehicleType);
   };
 
   return (
@@ -104,7 +101,9 @@ const Filters = () => {
           const active = localVehicleType === type;
           return (
             <button
-              onClick={() => setLocalVehicleType(type)}
+              onClick={() =>
+                setLocalVehicleType((prev) => (prev === type ? "" : type))
+              }
               key={type}
               className={`${css.vehicleTypeBtn} ${active ? css.btnActive : ""}`}
             >
@@ -123,7 +122,7 @@ const Filters = () => {
           onClick={() => {
             toast.success("Filters was cleaned!");
             resetFilters();
-            setLocalEquipment(defaultEquipment);
+            setLocalEquipment({ ...defaultEquipment });
             setLocalVehicleType("");
           }}
         >
