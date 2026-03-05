@@ -47,7 +47,7 @@
 
 .equipmentList {
   padding-top: 24px;
-  max-width: 250px;
+  max-width: 360px;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -101,17 +101,19 @@
 /* Icon Filter */
 .iconFilter {
   padding-bottom: 8px;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
 }
 
 /* Vechicle Type List */
 
 .vehicleTypeList {
   padding-top: 24px;
-  max-width: 250px;
+  max-width: 360px;
   width: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   gap: 12px;
 
@@ -125,6 +127,7 @@
   flex-direction: column;
   align-items: center;
   width: 112px;
+  height: 96px;
   background-color: white;
   border: 1px solid #dadde1;
 
@@ -139,7 +142,6 @@
   border-width: 1px;
   padding-top: 16px;
   padding-right: 12px;
-  padding-bottom: 16px;
   padding-left: 12px;
   outline: none;
   transition: all 0.3s ease;
@@ -169,8 +171,8 @@
   font-size: 16px;
   line-height: 24px;
   letter-spacing: -0.5%;
-  padding: 16px 26px 16px 26px;
-  border-radius: 20px;
+  padding: 16px 56px 16px 56px;
+  border-radius: 200px;
   margin-top: 40px;
   margin-left: 64px;
   outline: none;
@@ -202,7 +204,7 @@
   letter-spacing: -0.5%;
   padding: 10px 10px 10px 10px;
   margin-left: 5px;
-  border-radius: 15px;
+  border-radius: 20px;
   margin-top: 40px;
   outline: none;
 

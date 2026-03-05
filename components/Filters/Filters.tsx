@@ -72,6 +72,7 @@ const Filters = () => {
   const handleClick = () => {
     toggleEquipment(localEquipment);
     setVehicleType(localVehicleType);
+    toast.success("Filters applied! Showing results…");
   };
 
   return (
