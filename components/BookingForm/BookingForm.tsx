@@ -1,4 +1,4 @@
-import { Formik, Form, Field, validateYupSchema } from "formik";
+import { Formik, Form, Field, validateYupSchema, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import css from "./BookingForm.module.css";
 // react hot-toast
@@ -14,18 +14,15 @@ const BookingForm = () => {
   // Booking Schmema
   const BookingSchema = Yup.object().shape({
     name: Yup.string()
-      .min(2, "Too Short!")
-      .max(50, "Too Long!")
-      .required("Required"),
-    email: Yup.string().email("Invalid email").required("Required"),
+      .min(2, "Too Short Name!")
+      .max(50, "Too Long Name!")
+      .required("Required Name!"),
+    email: Yup.string().email("Invalid email!").required("Required Email!"),
     bookingDate: Yup.string()
-      .min(2, "Too Short!")
-      .max(50, "Too Long!")
-      .required("Required"),
-    comment: Yup.string()
-      .min(2, "Too Short!")
-      .max(50, "Too Long!")
-      .required("Required"),
+      .min(2, "Too Short Booking Date!")
+      .max(50, "Too Long Booking Date!")
+      .required("Required Booking Date!"),
+    comment: Yup.string().max(300, "Too Long Comment!"),
   });
   return (
     // Booking Container
@@ -47,11 +44,21 @@ const BookingForm = () => {
       >
         <Form className={css.bookingForm}>
           <Field className={css.bookingField} name="name" placeholder="Name*" />
+          <ErrorMessage
+            name="name"
+            component="span"
+            className={css.errorMessage}
+          />
           <Field
             className={css.bookingField}
             name="email"
             placeholder="Email*"
             required
+          />
+          <ErrorMessage
+            name="email"
+            component="span"
+            className={css.errorMessage}
           />
           <Field
             className={css.bookingField}
@@ -59,12 +66,22 @@ const BookingForm = () => {
             placeholder="Booking date*"
             required
           />
+          <ErrorMessage
+            name="bookingDate"
+            component="span"
+            className={css.errorMessage}
+          />
           <Field
             className={css.bookingTextarea}
             name="comment"
             placeholder="Comment"
             as="textarea"
             rows="4"
+          />
+          <ErrorMessage
+            name="comment"
+            component="span"
+            className={css.errorMessage}
           />
           {/* Button Submit Form */}
           <button className={css.bookingButton}>Send</button>

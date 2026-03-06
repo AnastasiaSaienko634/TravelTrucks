@@ -106,3 +106,10 @@
 .bookingButton:focus {
   background-color: #d84343;
 }
+
+/* Error Message  */
+
+.errorMessage {
+  color: #e44848;
+  font-size: 14px;
+}
