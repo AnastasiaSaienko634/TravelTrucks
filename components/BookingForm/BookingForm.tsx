@@ -1,4 +1,5 @@
-import { Formik, Form, Field } from "formik";
+import { Formik, Form, Field, validateYupSchema } from "formik";
+import * as Yup from "yup";
 import css from "./BookingForm.module.css";
 // react hot-toast
 import toast from "react-hot-toast";
@@ -10,6 +11,22 @@ const BookingForm = () => {
   const handleSubmit = () => {
     toast.success("Your booking was successful!");
   };
+  // Booking Schmema
+  const BookingSchema = Yup.object().shape({
+    name: Yup.string()
+      .min(2, "Too Short!")
+      .max(50, "Too Long!")
+      .required("Required"),
+    email: Yup.string().email("Invalid email").required("Required"),
+    bookingDate: Yup.string()
+      .min(2, "Too Short!")
+      .max(50, "Too Long!")
+      .required("Required"),
+    comment: Yup.string()
+      .min(2, "Too Short!")
+      .max(50, "Too Long!")
+      .required("Required"),
+  });
   return (
     // Booking Container
     <div className={css.container}>
@@ -26,6 +43,7 @@ const BookingForm = () => {
           comment: "",
         }}
         onSubmit={handleSubmit}
+        validationSchema={BookingSchema}
       >
         <Form className={css.bookingForm}>
           <Field className={css.bookingField} name="name" placeholder="Name*" />
