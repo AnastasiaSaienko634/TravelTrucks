@@ -3,15 +3,13 @@ import * as Yup from "yup";
 import css from "./BookingForm.module.css";
 // react hot-toast
 import toast from "react-hot-toast";
-// Booking Valigation
-// Coming soon...
 
 // Booking Form
 const BookingForm = () => {
   const handleSubmit = () => {
     toast.success("Your booking was successful!");
   };
-  // Booking Schmema
+  // Booking Schmema / Validation
   const BookingSchema = Yup.object().shape({
     name: Yup.string()
       .min(2, "Too Short Name!")
