@@ -42,6 +42,7 @@ const BookingForm = () => {
       >
         <Form className={css.bookingForm}>
           <Field className={css.bookingField} name="name" placeholder="Name*" />
+          {/* Error Message for Validation Name */}
           <ErrorMessage
             name="name"
             component="span"
@@ -53,6 +54,7 @@ const BookingForm = () => {
             placeholder="Email*"
             required
           />
+          {/* Error Message for Validation Email */}
           <ErrorMessage
             name="email"
             component="span"
@@ -64,6 +66,7 @@ const BookingForm = () => {
             placeholder="Booking date*"
             required
           />
+          {/* Error Message for Validation Booking Date */}
           <ErrorMessage
             name="bookingDate"
             component="span"
@@ -76,6 +79,7 @@ const BookingForm = () => {
             as="textarea"
             rows="4"
           />
+          {/* Error Message for Validation Comment */}
           <ErrorMessage
             name="comment"
             component="span"

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import css from "./page.module.css";
 
+// Home Page
 const Home = () => {
   return (
     <main className={css.main}>
@@ -9,6 +10,7 @@ const Home = () => {
       <p className={css.heroDiscription}>
         You can find everything you want in our catalog
       </p>
+      {/* Link to Catolog with Trucks */}
       <Link href="/catalog" className={css.heroButton}>
         View Now
       </Link>

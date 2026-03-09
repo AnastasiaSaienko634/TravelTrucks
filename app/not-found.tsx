@@ -4,11 +4,11 @@ import Link from "next/link";
 
 // Metadata
 export const metadata: Metadata = {
-  title: "Cторінку не було знайдено",
-  description: "Сторінку яку ви шукали не було знайдено...",
+  title: "Page was not found.",
+  description: "The page you were looking for was not found...",
   openGraph: {
-    title: "Cторінку не було знайдено",
-    description: "Сторінку яку ви шукали не було знайдено...",
+    title: "Page was not found.",
+    description: "The page you were looking for was not found...",
     url: "/not-found",
     images: [
       {
@@ -20,13 +20,14 @@ export const metadata: Metadata = {
   },
 };
 
-// NotFound page
+// NotFound Page
 const NotFound = () => {
   return (
     <div className={css.notFoundContainer}>
-      <h1>404 - Сторінку не було знайдено</h1>
-      <p>Сторінку, яку ви шукали, не знайдено.</p>
-      <Link href="/">Повернутися на головну сторінку</Link>
+      <h1>404 - Page was not found.</h1>
+      <p>The page you were looking for was not found...</p>
+      {/* Link to Home Page */}
+      <Link href="/">Go to Home Page</Link>
     </div>
   );
 };
