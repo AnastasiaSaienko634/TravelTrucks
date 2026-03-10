@@ -4,17 +4,23 @@
   display: flex;
   padding-top: 28px;
   padding-bottom: 28px;
-  margin: 0px;
-  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.headerContainer {
+  display: flex;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 /* Logo */
 .logo {
-  position: absolute;
   font-size: 24px;
   font-weight: 800;
-  padding-left: 64px;
   color: #333;
   text-decoration: none;
   color: #101828;

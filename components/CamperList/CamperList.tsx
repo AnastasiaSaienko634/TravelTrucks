@@ -1,42 +1,57 @@
 "use client";
+
 import { useState } from "react";
 import CamperCard from "../CamperCard/CamperCard";
 import css from "./CamperList.module.css";
 import { Camper } from "@/types/campers";
 import ScrollToTopButton from "../ScrollToTopButton/ScrollToTopButton";
+import { CiNoWaitingSign } from "react-icons/ci";
 
 interface Props {
   campers: Camper[];
 }
 
 const CamperList = ({ campers }: Props) => {
-  const [visiableCount, setVisiableCount] = useState(4);
-  const visiableCampers = campers.slice(0, visiableCount);
+  const [visibleCount, setVisibleCount] = useState(4);
+  const visibleCampers = campers.slice(0, visibleCount);
+
   return (
     <main>
       {/* Camper List */}
-      <ul className={css.camperList}>
-        {visiableCampers.map((camper: Camper) => (
-          <li key={camper.id}>
-            <CamperCard camper={camper} />
-          </li>
-        ))}
-      </ul>
-      {/* Load More button */}
-      {visiableCount < campers.length ? (
-        <div className={css.visiableBtnLoadMr}>
-          <ScrollToTopButton />
-          <button
-            className={css.loadMoreBtn}
-            onClick={() => setVisiableCount((prev) => prev + 4)}
-          >
-            Load more
-          </button>
-        </div>
+      {visibleCampers.length > 0 ? (
+        <>
+          <ul className={css.camperList}>
+            {visibleCampers.map((camper: Camper) => (
+              <li key={camper.id}>
+                <CamperCard camper={camper} />
+              </li>
+            ))}
+          </ul>
+
+          {/* Load More / Scroll Button */}
+          {visibleCount < campers.length ? (
+            <div className={css.visibleBtnLoadMore}>
+              <ScrollToTopButton />
+              <button
+                className={css.loadMoreBtn}
+                onClick={() => setVisibleCount((prev) => prev + 4)}
+              >
+                Load more
+              </button>
+            </div>
+          ) : (
+            <div className={css.scrollTopBtnContainer}>
+              <h3 className={css.scrollBtnTitle}>Nothing more found...</h3>
+              <ScrollToTopButton />
+            </div>
+          )}
+        </>
       ) : (
-        <div className={css.scrollTopBtnConatiner}>
-          <h3 className={css.scrollBtnTitle}>Nothing more was find...</h3>
-          <ScrollToTopButton />
+        // Nothing Found
+        <div className={css.nthFindContainer}>
+          <h1 className={css.nthTitle}>No trucks was found!</h1>
+          <p>Try another one!</p>
+          <CiNoWaitingSign className={css.iconNth} />
         </div>
       )}
     </main>
