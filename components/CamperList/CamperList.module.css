@@ -42,7 +42,7 @@
 }
 
 /* Container Visiable Button Load More */
-.visiableBtnLoadMr {
+.visibleBtnLoadMore {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,8 +50,9 @@
 
 /* Scroll Top Btn Conatiner */
 
-.scrollTopBtnConatiner {
-  padding-top: 40px;
+.scrollTopBtnContainer {
+  margin-top: 20px;
+  padding-top: 20px;
   padding-bottom: 52px;
   display: flex;
   justify-content: center;
