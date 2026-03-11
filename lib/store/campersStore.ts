@@ -13,7 +13,9 @@ interface FilterStore {
   city: string;
   equipment: Record<string, boolean>;
   vehicleType: string;
+  searchTrigger: number;
 
+  triggerSearch: () => void;
   setCity: (city: string) => void;
   toggleEquipment: (items: Record<string, boolean>) => void;
   setVehicleType: (type: string) => void;
@@ -23,9 +25,15 @@ interface FilterStore {
 export const useFilterStore = create<FilterStore>()(
   persist(
     (set) => ({
+      searchTrigger: 0,
       city: "",
       equipment: { ...defaultEquipment },
       vehicleType: "",
+
+      triggerSearch: () =>
+        set((state) => ({
+          searchTrigger: state.searchTrigger + 1,
+        })),
 
       setCity: (city) => set({ city }),
 
@@ -49,6 +57,7 @@ export const useFilterStore = create<FilterStore>()(
     {
       name: "camper-filters", // localStorage key
       partialize: (state) => ({
+        searchTrigger: state.searchTrigger,
         city: state.city,
         equipment: state.equipment,
         vehicleType: state.vehicleType,

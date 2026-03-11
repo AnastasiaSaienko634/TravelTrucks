@@ -1,0 +1,35 @@
+/* Location Filter Container */
+.locationContainer {
+  display: flex;
+  padding-top: 48px;
+  padding-left: 64px;
+  max-width: 360px;
+  width: 100%;
+}
+
+/* Location Input */
+.inputLocation {
+  position: relative;
+  background-color: #f7f7f7;
+  border: none;
+  border-radius: 12px;
+  padding-left: 48px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  width: 100%;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+}
+
+/* Location Icon */
+.iconLocation {
+  padding-top: 14px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  color: #6c717b;
+  padding-left: 20px;
+}

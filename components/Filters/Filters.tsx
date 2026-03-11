@@ -12,6 +12,7 @@ import { FiGrid } from "react-icons/fi";
 import { FiColumns } from "react-icons/fi";
 import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import Location from "../Location/Location";
 const equipmentOptions = [
   { id: "AC", label: "AC", icon: <MdAir className={css.iconFilter} /> },
   {
@@ -50,6 +51,7 @@ const Filters = () => {
 
   const equipment = useFilterStore((state) => state.equipment);
   const vehicleType = useFilterStore((state) => state.vehicleType);
+  const triggerSearch = useFilterStore((state) => state.triggerSearch);
 
   const [localEquipment, setLocalEquipment] = useState(equipment);
   const [localVehicleType, setLocalVehicleType] = useState(vehicleType);
@@ -72,11 +74,13 @@ const Filters = () => {
   const handleClick = () => {
     toggleEquipment(localEquipment);
     setVehicleType(localVehicleType);
+    triggerSearch();
     toast.success("Filters applied! Showing results…");
   };
 
   return (
     <>
+      <Location />
       <h3 className={css.filtersTitle}>Filters</h3>
       <h2 className={css.vichleEquipment}>Vehicle equipment</h2>
       <div className={css.equipmentList}>
