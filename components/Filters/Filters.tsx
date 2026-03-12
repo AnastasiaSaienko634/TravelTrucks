@@ -13,6 +13,7 @@ import { FiColumns } from "react-icons/fi";
 import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import Location from "../Location/Location";
+
 const equipmentOptions = [
   { id: "AC", label: "AC", icon: <MdAir className={css.iconFilter} /> },
   {
