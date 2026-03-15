@@ -81,8 +81,10 @@ const Filters = () => {
 
   return (
     <>
+      {/* Location Filter */}
       <Location />
       <h3 className={css.filtersTitle}>Filters</h3>
+      {/* Filter Vehicle equipment */}
       <h2 className={css.vichleEquipment}>Vehicle equipment</h2>
       <div className={css.equipmentList}>
         {equipmentOptions.map(({ id, label, icon }) => {
@@ -100,7 +102,7 @@ const Filters = () => {
           );
         })}
       </div>
-
+      {/* Filter Vehicle type */}
       <h2 className={css.vehicleTypeTitle}>Vehicle type</h2>
       <div className={css.vehicleTypeList}>
         {vehicleOptions.map(({ type, label, icon }) => {
@@ -120,6 +122,7 @@ const Filters = () => {
         })}
       </div>
       <div className={css.buttons}>
+        {/* Serach Filter Button */}
         <button className={css.searchFilterBtn} onClick={handleClick}>
           Search
         </button>
