@@ -5,7 +5,7 @@ import {
   QueryClient,
 } from "@tanstack/react-query";
 import React from "react";
-import CamperDetailsClient from "./CamperDetailsClient.client";
+import CamperDetails from "./CamperDetails.client";
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -16,6 +16,7 @@ const CamperDetailsPage = async ({ params }: Props) => {
   const { id } = await params;
   const queryClient = new QueryClient();
 
+  // Fetch Camper by Id
   await queryClient.prefetchQuery({
     queryKey: ["camper", id],
     queryFn: () => fetchCamperById(id),
@@ -23,7 +24,7 @@ const CamperDetailsPage = async ({ params }: Props) => {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <CamperDetailsClient />
+      <CamperDetails />
     </HydrationBoundary>
   );
 };

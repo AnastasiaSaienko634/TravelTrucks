@@ -31,6 +31,8 @@ export const fetchCamperById = async (id: string) => {
   const response = await nextServer.get<Camper>(`/campers/${id}`);
   return response.data;
 };
+
+//Fetch Camper by Filter
 export const fetchCampersByFilter = async (
   vehicleEquipment: Record<string, boolean>,
   vehicleType: string,

@@ -10,13 +10,8 @@ import Loader from "@/components/Loader/Loader";
 
 const CatalogPage = () => {
   // Location state
-  const city = useFilterStore((state) => state.city);
-
-  const vehicleTp = useFilterStore((state) => state.vehicleType);
-  const vehicleEq = useFilterStore((state) => state.equipment);
-  const searchTrigger = useFilterStore((state) => state.searchTrigger);
-
-  const [loading, setLoading] = useState(false);
+  const { searchTrigger, vehicleType, equipment, city } = useFilterStore();
+  const [isLoading, setLoading] = useState(false);
   const [isPageLoading, setPageLoading] = useState(true);
   const [campers, setCampers] = useState([]);
 
@@ -27,12 +22,12 @@ const CatalogPage = () => {
         setLoading(true);
 
         const location = city || "";
-        const vehicleEquipment = vehicleEq ?? {};
-        const vehicleType = vehicleTp || "";
+        const vehicleEquipment = equipment ?? {};
+        const vehicleTp = vehicleType || "";
         // Fetch Campers by Filters
         const response = await fetchCampersByFilter(
           vehicleEquipment,
-          vehicleType,
+          vehicleTp,
           location,
         );
 
@@ -61,7 +56,7 @@ const CatalogPage = () => {
 
           <div className={css.camperListContainer}>
             {/* Camper List */}
-            <CamperList campers={campers} />
+            {campers && <CamperList campers={campers} />}
           </div>
         </div>
       )}
