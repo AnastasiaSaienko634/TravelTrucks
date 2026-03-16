@@ -22,19 +22,24 @@ const CamperCard = ({ camper }: CamperCardProp) => {
   return (
     <div className={css.card}>
       {/* Image */}
+
       <div className={css.imageContainer}>
-        <img
-          src={camper.gallery[0]?.original}
-          alt={camper.name}
-          className={css.image}
-        />
+        <Link href={`/catalog/filter/${camper.id}`}>
+          <img
+            src={camper.gallery[0]?.original}
+            alt={camper.name}
+            className={css.image}
+          />
+        </Link>
       </div>
 
       {/* Content */}
       <div className={css.content}>
         {/* Header */}
         <div className={css.header}>
-          <h2 className={css.title}>{camper.name}</h2>
+          <Link href={`/catalog/filter/${camper.id}`}>
+            <h2 className={css.title}>{camper.name}</h2>
+          </Link>
           <div className={css.priceFavoritContainer}>
             <h2 className={css.price}>€{camper.price.toFixed(2)}</h2>
             <button
