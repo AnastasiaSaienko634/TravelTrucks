@@ -1,8 +1,45 @@
-import { Formik, Form, Field, validateYupSchema, ErrorMessage } from "formik";
+"use client";
+import { useState } from "react";
+import { Formik, Form, Field, ErrorMessage, FieldProps } from "formik";
 import * as Yup from "yup";
 import css from "./BookingForm.module.css";
+
+// For Date Picker
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { enUS } from "date-fns/locale";
+
 // react hot-toast
 import toast from "react-hot-toast";
+
+// Date Picker
+const FormikDatePicker = ({ field, form }: FieldProps) => {
+  const [focused, setFocused] = useState(false);
+
+  return (
+    <div className={css.datePickerContainer}>
+      <DatePicker
+        {...field}
+        selected={field.value}
+        onChange={(date: Date | null) => form.setFieldValue(field.name, date)}
+        minDate={new Date()}
+        placeholderText={
+          focused ? "Select a date between today" : "Booking date*"
+        }
+        onFocus={() => setFocused(true)}
+        onBlur={() => {
+          setFocused(false);
+          form.setFieldTouched(field.name, true);
+        }}
+        className={css.bookingFieldDate}
+        dateFormat="dd/MM/yyyy"
+        formatWeekDay={(nameOfDay) => nameOfDay.slice(0, 3)}
+        locale={enUS}
+        required
+      />
+    </div>
+  );
+};
 
 // Booking Form
 const BookingForm = () => {
@@ -16,12 +53,9 @@ const BookingForm = () => {
       .max(50, "Too Long Name!")
       .required("Required Name!"),
     email: Yup.string().email("Invalid email!").required("Required Email!"),
-    bookingDate: Yup.string()
-      .min(2, "Too Short Booking Date!")
-      .max(50, "Too Long Booking Date!")
-      .required("Required Booking Date!"),
     comment: Yup.string().max(300, "Too Long Comment!"),
   });
+
   return (
     // Booking Container
     <div className={css.container}>
@@ -61,17 +95,12 @@ const BookingForm = () => {
             className={css.errorMessage}
           />
           <Field
-            className={css.bookingField}
             name="bookingDate"
             placeholder="Booking date*"
+            component={FormikDatePicker}
             required
           />
-          {/* Error Message for Validation Booking Date */}
-          <ErrorMessage
-            name="bookingDate"
-            component="span"
-            className={css.errorMessage}
-          />
+
           <Field
             className={css.bookingTextarea}
             name="comment"
