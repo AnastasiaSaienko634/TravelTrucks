@@ -94,6 +94,7 @@ const BookingForm = () => {
             component="span"
             className={css.errorMessage}
           />
+          {/* Booking Date Field + Date Picker */}
           <Field
             name="bookingDate"
             placeholder="Booking date*"

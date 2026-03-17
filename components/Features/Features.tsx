@@ -1,5 +1,5 @@
-import { Camper } from "@/types/campers";
 import css from "./Features.module.css";
+import { Camper } from "@/types/campers";
 // Icons
 import { TbAutomaticGearbox } from "react-icons/tb";
 import { FaGasPump } from "react-icons/fa";

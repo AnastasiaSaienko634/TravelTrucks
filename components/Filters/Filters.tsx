@@ -1,6 +1,12 @@
 "use client";
+// Store
 import { defaultEquipment, useFilterStore } from "@/lib/store/campersStore";
+// React Hot Toaster
+import toast, { Toaster } from "react-hot-toast";
+// Styles
 import css from "./Filters.module.css";
+// Component
+import Location from "../Location/Location";
 // Icons
 import { LiaTrashAltSolid } from "react-icons/lia";
 import { MdTv } from "react-icons/md";
@@ -11,8 +17,6 @@ import { MdOutlineViewComfy } from "react-icons/md";
 import { FiGrid } from "react-icons/fi";
 import { FiColumns } from "react-icons/fi";
 import { useEffect, useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
-import Location from "../Location/Location";
 
 const equipmentOptions = [
   { id: "AC", label: "AC", icon: <MdAir className={css.iconFilter} /> },

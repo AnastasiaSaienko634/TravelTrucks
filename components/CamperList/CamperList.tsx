@@ -1,11 +1,15 @@
 "use client";
-
-import { useState } from "react";
-import CamperCard from "../CamperCard/CamperCard";
+// Styles
 import css from "./CamperList.module.css";
+// Hook
+import { useState } from "react";
+// Types
 import { Camper } from "@/types/campers";
-import ScrollToTopButton from "../ScrollToTopButton/ScrollToTopButton";
+// Icons
 import { CiNoWaitingSign } from "react-icons/ci";
+// Components
+import CamperCard from "../CamperCard/CamperCard";
+import ScrollToTopButton from "../ScrollToTopButton/ScrollToTopButton";
 
 interface Props {
   campers: Camper[];

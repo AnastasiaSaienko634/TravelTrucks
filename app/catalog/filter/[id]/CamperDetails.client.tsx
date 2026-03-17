@@ -1,10 +1,13 @@
 "use client";
 
 import css from "./CamperDetails.module.css";
+// Hooks
+import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "next/navigation";
+// React hot Toaster
 import { Toaster } from "react-hot-toast";
-import { useState } from "react";
+// API
 import { fetchCamperById } from "@/lib/api/serverApi";
 // Components
 import BookingForm from "@/components/BookingForm/BookingForm";
@@ -37,6 +40,7 @@ const CamperDetailsClient = () => {
   return (
     <div className={css.container}>
       <div className={css.camperContainer}>
+        {/* Name Trucks */}
         <h2 className={css.camperTitle}>{camper.name}</h2>
         {/* Rating & location */}
         <div className={css.meta}>
@@ -49,6 +53,7 @@ const CamperDetailsClient = () => {
             {camper.location}
           </span>
         </div>
+        {/* Price | Gallery Trucks */}
         <p className={css.camperPrice}>€{camper.price}</p>
         <ul className={css.camperGallery}>
           {camper.gallery
@@ -97,6 +102,7 @@ const CamperDetailsClient = () => {
             <BookingForm />
           </div>
         </div>
+        {/* React Toaster Component */}
         <Toaster />
       </div>
     </div>
