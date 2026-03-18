@@ -130,6 +130,7 @@ const Filters = () => {
         <button className={css.searchFilterBtn} onClick={handleClick}>
           Search
         </button>
+        {/* Reset Filter Button */}
         <button
           className={css.resetFiltersBtn}
           onClick={() => {

@@ -17,13 +17,16 @@ import Reviews from "@/components/Reviews/Reviews";
 import { RiStarSFill } from "react-icons/ri";
 import { CiMap } from "react-icons/ci";
 import Loader from "@/components/Loader/Loader";
+import PhotoPreview from "@/components/PhotoPreview/PhotoPreview";
 
 const CamperDetailsClient = () => {
+  const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<"features" | "reviews">(
     "features",
   );
   const { id } = useParams<{ id: string }>();
 
+  console.log(selectedPhoto);
   const {
     data: camper,
     isLoading,
@@ -55,6 +58,7 @@ const CamperDetailsClient = () => {
         </div>
         {/* Price | Gallery Trucks */}
         <p className={css.camperPrice}>€{camper.price}</p>
+
         <ul className={css.camperGallery}>
           {camper.gallery
             .filter((image) => image.thumb)
@@ -67,10 +71,12 @@ const CamperDetailsClient = () => {
                   className={css.camperImg}
                   width={292}
                   height={312}
+                  onClick={() => setSelectedPhoto(image.thumb || null)}
                 />
               </li>
             ))}
         </ul>
+
         {/* Camper Truck description */}
         <p className={css.camperDescription}>{camper.description}</p>
 
@@ -104,6 +110,14 @@ const CamperDetailsClient = () => {
         </div>
         {/* React Toaster Component */}
         <Toaster />
+
+        {/* Selected Photo with Modal */}
+        {selectedPhoto && (
+          <PhotoPreview
+            photo={selectedPhoto}
+            onClose={() => setSelectedPhoto(null)}
+          />
+        )}
       </div>
     </div>
   );
