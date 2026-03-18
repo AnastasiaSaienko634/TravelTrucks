@@ -1,6 +1,13 @@
 "use client";
 import { useState } from "react";
-import { Formik, Form, Field, ErrorMessage, FieldProps } from "formik";
+import {
+  Formik,
+  Form,
+  Field,
+  ErrorMessage,
+  FieldProps,
+  FormikHelpers,
+} from "formik";
 import * as Yup from "yup";
 import css from "./BookingForm.module.css";
 
@@ -41,9 +48,20 @@ const FormikDatePicker = ({ field, form }: FieldProps) => {
   );
 };
 
+type FormValues = {
+  name: string;
+  email: string;
+  bookingDate: string;
+  comment: string;
+};
+
 // Booking Form
 const BookingForm = () => {
-  const handleSubmit = () => {
+  const handleSubmit = (
+    values: FormValues,
+    { resetForm }: FormikHelpers<FormValues>,
+  ) => {
+    resetForm();
     toast.success("Your booking was successful!");
   };
   // Booking Schmema / Validation
